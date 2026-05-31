@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainability &amp; Compliance | TØJ Sourcing | ESG Garment Factory</title>
+  <meta name="description" content="Read TØJ Sourcing's environmental ESG credentials, certified supply chains including GOTS, OEKO-TEX, RSC Rana Plaza safety successor, and our circular Recycle-Reuse-Reborn initiative.">
+  <style>body { background-color: #fafaf8; }</style>
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .cert-card {
+      border: 1px solid var(--color-slate-light);
+      background-color: var(--color-chalk);
+      padding: var(--spacing-xl);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cert-card-dark {
+      border: 1px solid var(--color-slate);
+      background-color: var(--color-navy);
+      padding: var(--spacing-xl);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cert-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--color-navy);
+      margin-bottom: var(--spacing-md);
+      font-weight: 600;
+    }
+    .cert-title-dark {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--color-lime);
+      margin-bottom: var(--spacing-md);
+      font-weight: 400;
+    }
+    .rr-step {
+      border: 1px solid var(--color-slate);
+      padding: var(--spacing-lg);
+      background-color: var(--color-navy);
+      position: relative;
+    }
+    .rr-step::after {
+      content: '>';
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%) scaleY(2);
+      color: var(--color-lime);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      z-index: 2;
+    }
+    .rr-step:last-child::after {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .rr-step::after {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-void">
+
+  <!-- Technical Preloader Overlay -->
+  <div class="preloader" id="site-preloader">
+    <script>
+      if (sessionStorage.getItem('preloader_shown') === 'true') {
+        document.getElementById('site-preloader').style.display = 'none';
+      }
+    </script>
+    <div class="preloader-content">
+      <span class="preloader-title">THREAD INTELLIGENCE // INITIALIZING SYSTEM</span>
+      <div class="preloader-counter">000</div>
+      <div class="preloader-progress-container">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dot Grid Texture Overlay -->
+  <div class="texture-overlay"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo-container">
+      <img src="assets/Untitled_design.webp" alt="TØJ Sourcing" class="logo-svg">
+    </a>
+    
+    <button class="burger-menu-btn" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="global.html" class="nav-link">Global Presence</a></li>
+      <li><a href="sustainability.html" class="nav-link active">Sustainability</a></li>
+      <li><a href="portfolio.html" class="nav-link">Showcase</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    
+    <!-- Cinematic Hero Section -->
+    <section class="section-pad bg-void" style="padding-top: 180px; min-height: 90vh; display: flex; align-items: center; position: relative; overflow: hidden;">
+      <!-- Looping background video -->
+      <div class="hero-video-container">
+        <video preload="metadata" autoplay loop muted playsinline class="hero-video-bg">
+          <source src="assets/cotton.mp4" type="video/mp4">
+        </video>
+        <!-- Overlay Gradient: High-contrast light wash on the left to guarantee perfect legibility, fading completely to transparent on the right to keep video highly visible -->
+        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(250, 250, 248, 0.85) 0%, rgba(250, 250, 248, 0.8) 35%, rgba(250, 250, 248, 0.3) 60%, rgba(250, 250, 248, 0) 85%); z-index: 1;"></div>
+      </div>
+      <div class="container" style="position: relative; z-index: 2;">
+        <div class="grid-12">
+          <div class="asym-left" style="grid-column: span 10;">
+            <span class="label-caps fade-up-trigger">ENVIRONMENTAL COMPLIANCE</span>
+            <h1 class="text-display" style="margin-bottom: var(--spacing-lg); color: var(--color-linen);" data-split-reveal>ESG BLUEPRINT</h1>
+            
+            <!-- Technical Monospaced Tagline Readout -->
+            <div class="fade-up-trigger" style="margin-bottom: var(--spacing-xl); padding-left: var(--spacing-sm); border-left: 2px solid var(--color-lime);">
+              <p class="text-mono-lg" style="margin-bottom: var(--spacing-xs);">SUSTAINABILITY LOGS // ACCREDITED CHAINS</p>
+              <p class="text-mono-md text-muted">
+                TØJ Sourcing prioritizes strict environmental and ethical metrics. We trace raw organic fibers, enforce chemical safety, and verify safe labor conditions per GOTS, OEKO-TEX, and BSCI codes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Named Certifications Section (Oscillated Light Theme) -->
+    <section class="section-pad bg-linen">
+      <div class="container">
+        <div style="margin-bottom: var(--spacing-xxl);" class="fade-up-trigger">
+          <span class="label-caps" style="color: var(--color-lime-dim);">VETTED ACCREDITATIONS</span>
+          <h2 class="text-h1" style="color: var(--color-navy);">CERTIFICATIONS THAT DEFINE US</h2>
+        </div>
+        
+        <div class="grid-12">
+          <!-- Cert 1: GOTS -->
+          <div class="asym-left" style="grid-column: span 6;">
+            <div class="cert-card fade-up-trigger">
+              <div>
+                <!-- GOTS PNG Logo -->
+                <img src="assets/cert_gots.webp" alt="GOTS Standard Logo" class="cert-icon" style="width: 48px; height: 48px; margin-bottom: var(--spacing-sm); display: block; object-fit: contain;">
+                <span class="label-caps" style="color: var(--color-navy); margin-bottom: var(--spacing-md);">100% ORGANIC CERTIFIED</span>
+                <h3 class="cert-title">GOTS Standard</h3>
+                <p class="text-mono-md text-muted" style="margin-bottom: var(--spacing-lg);">
+                  The Global Organic Textile Standard verifies organic raw cotton paths from harvesting to spinning, knitting, and finished sewing. Ensuring zero toxic pesticides, GMO seeds, or harmful colorants exist in our fabrics.
+                </p>
+              </div>
+              <div style="border-top: 1px solid var(--color-slate-light); padding-top: var(--spacing-md); display: flex; justify-content: space-between;">
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-navy); font-weight: 600;">STATUS: ACTIVE</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #53647a;">LICENSE NO: 2204-TØJ</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Cert 2: OEKO-TEX -->
+          <div class="asym-left" style="grid-column: span 6;">
+            <div class="cert-card fade-up-trigger">
+              <div>
+                <!-- OEKO-TEX PNG Logo -->
+                <img src="assets/cert_oeko.webp" alt="OEKO-TEX Standard 100 Logo" class="cert-icon" style="width: 48px; height: 48px; margin-bottom: var(--spacing-sm); display: block; object-fit: contain;">
+                <span class="label-caps" style="color: var(--color-navy); margin-bottom: var(--spacing-md);">CHEMICAL SAFETY STANDARD</span>
+                <h3 class="cert-title">OEKO-TEX Standard 100</h3>
+                <p class="text-mono-md text-muted" style="margin-bottom: var(--spacing-lg);">
+                  Verifying that all parts of the garment — including buttons, zippers, linings, sewing threads, and raw fabrics — have been tested for over 100 toxic chemicals, allergens, and skin-sensitizing carcinogens.
+                </p>
+              </div>
+              <div style="border-top: 1px solid var(--color-slate-light); padding-top: var(--spacing-md); display: flex; justify-content: space-between;">
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-navy); font-weight: 600;">STATUS: ACTIVE</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #53647a;">CLASS I: BABY SAFE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 3: RSC Accord -->
+          <div class="asym-left" style="grid-column: span 6;">
+            <div class="cert-card fade-up-trigger">
+              <div>
+                <!-- RSC PNG Logo -->
+                <img src="assets/cert_rsc.webp" alt="RSC Accord Logo" class="cert-icon" style="width: 48px; height: 48px; margin-bottom: var(--spacing-sm); display: block; object-fit: contain;">
+                <span class="label-caps" style="color: var(--color-navy); margin-bottom: var(--spacing-md);">STRUCTURAL LABOR SAFETY</span>
+                <h3 class="cert-title">RSC (Accord successor)</h3>
+                <p class="text-mono-md text-muted" style="margin-bottom: var(--spacing-lg);">
+                  TØJ factories are fully aligned with the RMG Sustainability Council (RSC) codes. This successor to the original Bangladesh Accord enforces strict electrical infrastructure safety and structural engineering controls.
+                </p>
+              </div>
+              <div style="border-top: 1px solid var(--color-slate-light); padding-top: var(--spacing-md); display: flex; justify-content: space-between;">
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-navy); font-weight: 600;">STATUS: 100% COMPLIANT</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #53647a;">AUDIT: QUARTERLY</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 4: BSCI / WRAP -->
+          <div class="asym-left" style="grid-column: span 6;">
+            <div class="cert-card fade-up-trigger">
+              <div>
+                <!-- BSCI PNG Logo -->
+                <img src="assets/cert_bsci.webp" alt="BSCI WRAP Logo" class="cert-icon" style="width: 48px; height: 48px; margin-bottom: var(--spacing-sm); display: block; object-fit: contain;">
+                <span class="label-caps" style="color: var(--color-navy); margin-bottom: var(--spacing-md);">ETHICAL SOCIAL ACCREDITATION</span>
+                <h3 class="cert-title">BSCI &amp; WRAP Codes</h3>
+                <p class="text-mono-md text-muted" style="margin-bottom: var(--spacing-lg);">
+                  Amfori Business Social Compliance Initiative (BSCI) and Worldwide Responsible Accredited Production (WRAP) verify fair wages, zero child labor, safe standard hours, overtime bonuses, and freedom of collective union rights.
+                </p>
+              </div>
+              <div style="border-top: 1px solid var(--color-slate-light); padding-top: var(--spacing-md); display: flex; justify-content: space-between;">
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-navy); font-weight: 600;">STATUS: GRADE A / GOLD</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #53647a;">LABOR GRADE: OPTIMAL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recycleâ€“Reuseâ€“Reborn Initiative (Dark Theme) -->
+    <section class="section-pad bg-void" style="border-top: 1px solid var(--color-slate);">
+      <div class="container">
+        <div style="margin-bottom: var(--spacing-xl);" class="fade-up-trigger">
+          <span class="label-caps">CIRCULAR ROADMAP</span>
+          <h2 class="text-h1">RECYCLE &bull; REUSE &bull; REBORN</h2>
+        </div>
+        
+        <div class="fade-up-trigger" style="margin-bottom: var(--spacing-xl); border: 1px solid var(--color-slate); padding: 0;">
+          <img src="assets/sustainability_eco.webp" alt="Sustainable Organic Textile Stack" style="width: 100%; height: 380px; object-fit: cover; filter: grayscale(100%) contrast(1.1); transition: filter 0.6s var(--ease-premium);" onmouseover="this.style.filter='grayscale(0%) contrast(1.0)'" onmouseout="this.style.filter='grayscale(100%) contrast(1.1)'">
+        </div>
+        
+        <div class="grid-12">
+          <!-- Step 1 -->
+          <div class="asym-left" style="grid-column: span 4;">
+            <div class="rr-step fade-up-trigger">
+              <span class="label-caps">PHASE 01 // COTTON RECYCLE</span>
+              <h3 class="cert-title-dark" style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-sm);">Post-Industrial Clipping</h3>
+              <p class="text-mono-md text-muted">
+                Pre-consumer raw cutting clippings from our Dhaka factories are gathered, sorted by color shades, and shredded into pure recycled fiber state, avoiding dye chemicals.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="asym-left" style="grid-column: span 4;">
+            <div class="rr-step fade-up-trigger">
+              <span class="label-caps">PHASE 02 // BLENDING &amp; SPINNING</span>
+              <h3 class="cert-title-dark" style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-sm);">Regenerated Yarn Spinning</h3>
+              <p class="text-mono-md text-muted">
+                Recycled cotton fibers are blended with organic raw virgin GOTS cotton (approx 30/70 blend) to maintain structural yarn length, and spun into durable regenerated yarn.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="asym-left" style="grid-column: span 4;">
+            <div class="rr-step fade-up-trigger">
+              <span class="label-caps">PHASE 03 // CIRCULAR REBORN</span>
+              <h3 class="cert-title-dark" style="margin-top: var(--spacing-sm); margin-bottom: var(--spacing-sm);">Eco Garment Assembly</h3>
+              <p class="text-mono-md text-muted">
+                Spun regenerated yarn is knitted, dyed using non-toxic class-I chemicals, cut, and assembled into premium circular knitwear collections for international retailers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo-container" style="margin-bottom: var(--spacing-md);">
+            <img src="assets/Untitled_design.webp" alt="TØJ Sourcing" class="logo-svg">
+          </div>
+          <p class="text-mono-md text-muted" style="line-height: 1.5; margin-bottom: var(--spacing-md);">
+            Integrated virtual apparel manufacturing for international fashion enterprises. Registered office: Mirpur DOHS, Dhaka, Bangladesh.
+          </p>
+          <div style="margin-top: var(--spacing-md);">
+            <span class="label-caps" style="color: var(--color-lime); font-size: 0.7rem; display: block; margin-bottom: 2px;">SAY HI!</span>
+            <a href="mailto:hello@tojsourcing.com" class="text-display" style="font-size: 1.25rem; font-weight: 600; color: var(--color-text-light); text-decoration: none; transition: color var(--transition-fast);">hello@tojsourcing.com</a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Origin</a></li>
+            <li><a href="services.html" class="footer-link">Service Pillars</a></li>
+            <li><a href="global.html" class="footer-link">Global Shells</a></li>
+            <li><a href="sustainability.html" class="footer-link">ESG Standards</a></li>
+            <li><a href="portfolio.html" class="footer-link">Apparel Showcase</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#rd" class="footer-link">Fabric R&amp;D</a></li>
+            <li><a href="services.html#design" class="footer-link">3D CAD Design</a></li>
+            <li><a href="services.html#production" class="footer-link">Bulk Assembly</a></li>
+            <li><a href="services.html#operations" class="footer-link">Compliance Logistics</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">HQ Credentials</h4>
+          <p class="text-mono-md text-muted" style="line-height: 1.5; margin-bottom: var(--spacing-sm);">
+            House-774, Road-11, Avenue-2, Mirpur DOHS,<br>Dhaka-1216, Bangladesh.
+          </p>
+          <p class="text-mono-md text-muted" style="margin-bottom: 4px;">
+            Phone: <span style="color: var(--color-text-light);">+880 171 460 3626</span>
+          </p>
+          <p class="text-mono-md text-muted">
+            Email: <a href="mailto:info@tojsourcing.com" class="footer-link" style="color: var(--color-lime);">info@tojsourcing.com</a>
+          </p>
+        </div>
+      </div>
+      
+      <div style="border-top: 1px solid var(--color-slate); margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--spacing-md);">
+        <p>&copy; 2026 TØJ Sourcing Company Limited. All rights reserved.</p>
+        
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+

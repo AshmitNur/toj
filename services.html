@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | TØJ Sourcing | Fabric R&amp;D, Apparel Design, Production</title>
+  <meta name="description" content="Explore TØJ Sourcing's four service pillars: Research &amp; Development, 3D CAD Design, Bulk Apparel Production, and Operational Supply Chain Logistics.">
+  <style>body { background-color: #fafaf8; }</style>
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Technical Matrix Table Styling */
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      margin-top: var(--spacing-xl);
+    }
+    .matrix-table th {
+      border-bottom: 2px solid var(--color-lime);
+      color: var(--color-linen);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: var(--spacing-md) var(--spacing-sm);
+      text-align: left;
+    }
+    .matrix-table td {
+      border-bottom: 1px solid var(--color-slate);
+      padding: var(--spacing-lg) var(--spacing-sm);
+      color: #889bb0;
+      vertical-align: top;
+    }
+    .matrix-table tr:hover td {
+      color: var(--color-linen);
+      background-color: var(--color-navy);
+    }
+    .process-flow {
+      display: flex;
+      justify-content: space-between;
+      margin-top: var(--spacing-lg);
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+    }
+    .process-step {
+      flex: 1;
+      min-width: 200px;
+      border: 1px solid var(--color-slate);
+      padding: var(--spacing-md);
+      position: relative;
+    }
+    .process-step::after {
+      content: '>';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-lime);
+      font-family: var(--font-mono);
+      font-weight: 700;
+    }
+    .process-step:last-child::after {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-void">
+
+  <!-- Technical Preloader Overlay -->
+  <div class="preloader" id="site-preloader">
+    <script>
+      if (sessionStorage.getItem('preloader_shown') === 'true') {
+        document.getElementById('site-preloader').style.display = 'none';
+      }
+    </script>
+    <div class="preloader-content">
+      <span class="preloader-title">THREAD INTELLIGENCE // INITIALIZING SYSTEM</span>
+      <div class="preloader-counter">000</div>
+      <div class="preloader-progress-container">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dot Grid Texture Overlay -->
+  <div class="texture-overlay"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="logo-container">
+      <img src="assets/Untitled_design.webp" alt="TØJ Sourcing" class="logo-svg">
+    </a>
+    
+    <button class="burger-menu-btn" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link active">Services</a></li>
+      <li><a href="global.html" class="nav-link">Global Presence</a></li>
+      <li><a href="sustainability.html" class="nav-link">Sustainability</a></li>
+      <li><a href="portfolio.html" class="nav-link">Showcase</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    
+    <!-- Cinematic Hero Section -->
+    <section class="section-pad bg-void" style="padding-top: 180px; min-height: 90vh; display: flex; align-items: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--color-slate);">
+      <!-- Looping background video -->
+      <div class="hero-video-container">
+        <video preload="metadata" autoplay loop muted playsinline class="hero-video-bg">
+          <source src="assets/Garment_manufacturing_montage_in…_202605270054.mp4" type="video/mp4">
+        </video>
+        <!-- Overlay Gradient: High-contrast light wash on the left to guarantee perfect legibility, fading completely to transparent on the right to keep video highly visible -->
+        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(250, 250, 248, 0.85) 0%, rgba(250, 250, 248, 0.8) 35%, rgba(250, 250, 248, 0.3) 60%, rgba(250, 250, 248, 0) 85%); z-index: 1;"></div>
+      </div>
+      <div class="container" style="position: relative; z-index: 2;">
+        <div class="grid-12">
+          <div class="asym-left" style="grid-column: span 10;">
+            <span class="label-caps">OUR CAPABILITIES</span>
+            <h1 class="text-display" style="margin-bottom: var(--spacing-md);" data-split-reveal>SERVICE PILLARS</h1>
+            <p class="text-mono-lg text-muted" style="max-width: 800px;">
+              TØJ SOURCING manages the entire clothing supply chain lifecycle, structuring raw sourcing reality through four dedicated vertical shells.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Comparison Matrix Table Section -->
+    <section class="section-pad bg-void">
+      <div class="container">
+        <div class="fade-up-trigger">
+          <span class="label-caps">SUPPLY MATRIX</span>
+          <h2 class="text-h1">COMPARING OUR PILLARS</h2>
+        </div>
+        
+        <div class="fade-up-trigger" style="overflow-x: auto;">
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th>Pillar Shell</th>
+                <th>Core Responsibilities</th>
+                <th>Client Input Required</th>
+                <th>Deliverables / Outputs</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color: var(--color-lime); font-weight: 600;">01 // Research &amp; Development</td>
+                <td>Yarn composition engineering, raw fabric cataloging, eco-alternative chemical analysis, material labs.</td>
+                <td>Material reference swatch, weight goals, composition sheets.</td>
+                <td>Raw lab fabric testing sheets, material mapping reports, organic certified swatches.</td>
+              </tr>
+              <tr>
+                <td style="color: var(--color-lime); font-weight: 600;">02 // Design Direction</td>
+                <td>3D CAD modeling, digital custom range planning, pattern grading, tech pack generation.</td>
+                <td>Rough sketches, designer mood boards, style references.</td>
+                <td>Complete digital apparel tech packs, 3D clothing mockups, paper patterns.</td>
+              </tr>
+              <tr>
+                <td style="color: var(--color-lime); font-weight: 600;">03 // Bulk Production</td>
+                <td>Dhaka network factory allocation, raw yarn booking, daily assembly tracking, line QA reviews.</td>
+                <td>Signed tech packs, physical size sample approvals, order volume lists.</td>
+                <td>Completed QA-inspected bulk clothing items, packaging layout sheets.</td>
+              </tr>
+              <tr>
+                <td style="color: var(--color-lime); font-weight: 600;">04 // Operations &amp; Support</td>
+                <td>Ethical safety audits, GOTS certificate tracing, shipping logistics, customs clearing.</td>
+                <td>Shipping destinations, customs broker contacts.</td>
+                <td>Container tracking reports, certified compliance logs, customs documents.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillar 1: R&D -->
+    <section id="rd" class="section-pad bg-linen">
+      <div class="container">
+        <div class="grid-12" style="align-items: center;">
+          <div class="asym-left fade-up-trigger">
+            <span class="label-caps" style="color: var(--color-lime-dim);">SHELL 01 // TEXTILE R&amp;D</span>
+            <h2 class="text-h1" style="color: var(--color-navy); margin-bottom: var(--spacing-md);">Yarn Technology &amp; Material Science</h2>
+            <p class="text-mono-md text-muted" style="margin-bottom: var(--spacing-md);">
+              Before a single stitch is sewn, our Dhaka lab catalog checks the exact structural properties of the raw yarn. We specialize in engineering custom cotton blends, recycled polyesters, and organic fibers.
+            </p>
+            <div style="border-top: 1px solid var(--color-slate-light); padding-top: var(--spacing-md);">
+              <span class="label-caps" style="color: var(--color-navy); margin-bottom: 4px;">KEY ACTIONS</span>
+              <ul class="text-mono-md text-muted" style="list-style: square; padding-left: var(--spacing-md);">
+                <li>Fiber density checking and shrink-rating mapping.</li>
+                <li>GOTS compliance certification audits for organic raw yarn.</li>
+                <li>Washing durability testing under ISO lab parameters.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="asym-right fade-up-trigger" style="background-color: var(--color-chalk); border: 1px solid var(--color-slate-light); padding: 0; display: flex; flex-direction: column; height: 100%;">
+            <img src="assets/services_rd.webp" alt="Textile R&D Science" style="width: 100%; height: 240px; object-fit: cover; border-bottom: 1px solid var(--color-slate-light); filter: grayscale(100%) contrast(1.1); transition: filter 0.6s var(--ease-premium);" onmouseover="this.style.filter='grayscale(0%) contrast(1.0)'" onmouseout="this.style.filter='grayscale(100%) contrast(1.1)'">
+            <div style="padding: var(--spacing-xl);">
+              <span class="label-caps" style="color: var(--color-navy);">R&D PROCESS FLOW</span>
+              <div class="process-flow" style="display: flex; flex-direction: column; gap: var(--spacing-md); margin-top: var(--spacing-md);">
+                <div class="process-step" style="border-color: var(--color-slate-light);">&bull; Reference Swatch Received</div>
+                <div class="process-step" style="border-color: var(--color-slate-light);">&bull; Lab Composition Analysis</div>
+                <div class="process-step" style="border-color: var(--color-slate-light);">&bull; Engineered Sample Yarn Spun</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillar 2: Design -->
+    <section id="design" class="section-pad bg-void">
+      <div class="container">
+        <div class="grid-12" style="align-items: center;">
+          <div class="asym-right fade-up-trigger" style="background-color: var(--color-navy); border: 1px solid var(--color-slate); padding: 0; display: flex; flex-direction: column; height: 100%; order: 2;">
+            <img src="assets/services_design.webp" alt="Digital CAD Sourcing Design" style="width: 100%; height: 240px; object-fit: cover; border-bottom: 1px solid var(--color-slate); filter: grayscale(100%) contrast(1.1); transition: filter 0.6s var(--ease-premium);" onmouseover="this.style.filter='grayscale(0%) contrast(1.0)'" onmouseout="this.style.filter='grayscale(100%) contrast(1.1)'">
+            <div style="padding: var(--spacing-xl);">
+              <span class="label-caps">DESIGN PROCESS FLOW</span>
+              <div class="process-flow" style="display: flex; flex-direction: column; gap: var(--spacing-md); margin-top: var(--spacing-md);">
+                <div class="process-step">&bull; 2D CAD Tech Pack Setup</div>
+                <div class="process-step">&bull; 3D Digital Fabric Simulation</div>
+                <div class="process-step">&bull; Fit-Sample Grade Patterning</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="asym-left fade-up-trigger" style="order: 1;">
+            <span class="label-caps">SHELL 02 // APPAREL DESIGN DIRECTION</span>
+            <h2 class="text-h1" style="margin-bottom: var(--spacing-md);">Apparel Design &amp; Custom CAD Drafting</h2>
+            <p class="text-mono-md text-muted" style="margin-bottom: var(--spacing-md);">
+              Bridging fashion vision and factory capability. Led by our design head in London, we translate mood boards and design files into highly precise technical sheets that direct our Dhaka manufacturing network with millimeter accuracy.
+            </p>
+            <div style="border-top: 1px solid var(--color-slate); padding-top: var(--spacing-md);">
+              <span class="label-caps" style="margin-bottom: 4px;">KEY ACTIONS</span>
+              <ul class="text-mono-md text-muted" style="list-style: square; padding-left: var(--spacing-md);">
+                <li>Digital range catalog planning and detailed styling revisions.</li>
+                <li>Apparel CAD rendering for quick customer reviews.</li>
+                <li>Size grading templates setup matching international markets.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillar 3: Production -->
+    <section id="production" class="section-pad bg-linen">
+      <div class="container">
+        <div class="grid-12" style="align-items: center;">
+          <div class="asym-left fade-up-trigger">
+            <span class="label-caps" style="color: var(--color-lime-dim);">SHELL 03 // BULK ASSEMBLY</span>
+            <h2 class="text-h1" style="color: var(--color-navy); margin-bottom: var(--spacing-md);">Direct Sourcing &amp; Strict Line Quality</h2>
+            <p class="text-mono-md text-muted" style="margin-bottom: var(--spacing-md);">
+              Managing the assembly of 28 million garments annually. TØJ Sourcing directly supervises our vetted network of 80+ partner factories in Bangladesh, utilizing 100+ QA and operational staff to verify zero tolerance defects.
+            </p>
+            <div style="border-top: 1px solid var(--color-slate-light); padding-top: var(--spacing-md);">
+              <span class="label-caps" style="color: var(--color-navy); margin-bottom: 4px;">KEY ACTIONS</span>
+              <ul class="text-mono-md text-muted" style="list-style: square; padding-left: var(--spacing-md);">
+                <li>Factory capacity booking and scheduling.</li>
+                <li>Daily production tracking reports with color-coded timelines.</li>
+                <li>In-line and final packaging AQL 1.5 standard inspections.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="asym-right fade-up-trigger" style="background-color: var(--color-chalk); border: 1px solid var(--color-slate-light); padding: 0; display: flex; flex-direction: column; height: 100%;">
+            <img src="assets/services_production.webp" alt="Apparel Assembly Production Line" style="width: 100%; height: 240px; object-fit: cover; border-bottom: 1px solid var(--color-slate-light); filter: grayscale(100%) contrast(1.1); transition: filter 0.6s var(--ease-premium);" onmouseover="this.style.filter='grayscale(0%) contrast(1.0)'" onmouseout="this.style.filter='grayscale(100%) contrast(1.1)'">
+            <div style="padding: var(--spacing-xl);">
+              <span class="label-caps" style="color: var(--color-navy);">PRODUCTION PROCESS FLOW</span>
+              <div class="process-flow" style="display: flex; flex-direction: column; gap: var(--spacing-md); margin-top: var(--spacing-md);">
+                <div class="process-step" style="border-color: var(--color-slate-light);">&bull; Bulk Raw Yarn Booking</div>
+                <div class="process-step" style="border-color: var(--color-slate-light);">&bull; Assembly Line Pilot Run</div>
+                <div class="process-step" style="border-color: var(--color-slate-light);">&bull; Final Container Inspection</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillar 4: Operations -->
+    <section id="operations" class="section-pad bg-void">
+      <div class="container">
+        <div class="grid-12" style="align-items: center;">
+          <div class="asym-right fade-up-trigger" style="background-color: var(--color-navy); border: 1px solid var(--color-slate); padding: 0; display: flex; flex-direction: column; height: 100%; order: 2;">
+            <img src="assets/services_operations.webp" alt="Supply Chain Logistics Operations" style="width: 100%; height: 240px; object-fit: cover; border-bottom: 1px solid var(--color-slate); filter: grayscale(100%) contrast(1.1); transition: filter 0.6s var(--ease-premium);" onmouseover="this.style.filter='grayscale(0%) contrast(1.0)'" onmouseout="this.style.filter='grayscale(100%) contrast(1.1)'">
+            <div style="padding: var(--spacing-xl);">
+              <span class="label-caps">OPERATIONS PROCESS FLOW</span>
+              <div class="process-flow" style="display: flex; flex-direction: column; gap: var(--spacing-md); margin-top: var(--spacing-md);">
+                <div class="process-step">&bull; Social Compliance Audits</div>
+                <div class="process-step">&bull; Shipping Booking &amp; Loading</div>
+                <div class="process-step">&bull; Custom Clearance Processing</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="asym-left fade-up-trigger" style="order: 1;">
+            <span class="label-caps">SHELL 04 // LOGISTICS SUPPORT</span>
+            <h2 class="text-h1" style="margin-bottom: var(--spacing-md);">Ethical Compliance &amp; Custom Shipping</h2>
+            <p class="text-mono-md text-muted" style="margin-bottom: var(--spacing-md);">
+              Securing supply chain integrity. We coordinate all container shipments out of Chittagong Port, tracking custom documentation, environmental certificates, GOTS compliance transfers, and global freight parameters.
+            </p>
+            <div style="border-top: 1px solid var(--color-slate); padding-top: var(--spacing-md);">
+              <span class="label-caps" style="margin-bottom: 4px;">KEY ACTIONS</span>
+              <ul class="text-mono-md text-muted" style="list-style: square; padding-left: var(--spacing-md);">
+                <li>Audit updates for partner mills under BSCI and Accord successor codes.</li>
+                <li>Custom import code clearances tailored for the USA, UK, and European markets.</li>
+                <li>Carbon footprint tracking logs per ocean freight container.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo-container" style="margin-bottom: var(--spacing-md);">
+            <img src="assets/Untitled_design.webp" alt="TØJ Sourcing" class="logo-svg">
+          </div>
+          <p class="text-mono-md text-muted" style="line-height: 1.5; margin-bottom: var(--spacing-md);">
+            Integrated virtual apparel manufacturing for international fashion enterprises. Registered office: Mirpur DOHS, Dhaka, Bangladesh.
+          </p>
+          <div style="margin-top: var(--spacing-md);">
+            <span class="label-caps" style="color: var(--color-lime); font-size: 0.7rem; display: block; margin-bottom: 2px;">SAY HI!</span>
+            <a href="mailto:hello@tojsourcing.com" class="text-display" style="font-size: 1.25rem; font-weight: 600; color: var(--color-text-light); text-decoration: none; transition: color var(--transition-fast);">hello@tojsourcing.com</a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Origin</a></li>
+            <li><a href="services.html" class="footer-link">Service Pillars</a></li>
+            <li><a href="global.html" class="footer-link">Global Shells</a></li>
+            <li><a href="sustainability.html" class="footer-link">ESG Standards</a></li>
+            <li><a href="portfolio.html" class="footer-link">Apparel Showcase</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#rd" class="footer-link">Fabric R&amp;D</a></li>
+            <li><a href="services.html#design" class="footer-link">3D CAD Design</a></li>
+            <li><a href="services.html#production" class="footer-link">Bulk Assembly</a></li>
+            <li><a href="services.html#operations" class="footer-link">Compliance Logistics</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">HQ Credentials</h4>
+          <p class="text-mono-md text-muted" style="line-height: 1.5; margin-bottom: var(--spacing-sm);">
+            House-774, Road-11, Avenue-2, Mirpur DOHS,<br>Dhaka-1216, Bangladesh.
+          </p>
+          <p class="text-mono-md text-muted" style="margin-bottom: 4px;">
+            Phone: <span style="color: var(--color-text-light);">+880 171 460 3626</span>
+          </p>
+          <p class="text-mono-md text-muted">
+            Email: <a href="mailto:info@tojsourcing.com" class="footer-link" style="color: var(--color-lime);">info@tojsourcing.com</a>
+          </p>
+        </div>
+      </div>
+      
+      <div style="border-top: 1px solid var(--color-slate); margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--spacing-md);">
+        <p>&copy; 2026 TØJ Sourcing Company Limited. All rights reserved.</p>
+        
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,86 @@
+/* ==========================================================================
+   TØJ SOURCING — SYSTEM INITIALIZATION PRELOADER STYLE
+   ========================================================================== */
+
+@import url('https://fonts.cdnfonts.com/css/nexa');
+
+:root {
+  --color-void: #fafaf8;            /* Pure paper off-white matching style.css */
+  --color-lime: #bbd72a;
+  --color-lime-trans: rgba(187, 215, 42, 0.08);
+  --color-linen: #16263b;           /* Lighter corporate navy blue matching style.css */
+  --color-slate: rgba(22, 38, 59, 0.12); /* Delicate rules for light pages matching style.css */
+  
+  --font-display: 'Nexa', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+}
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-void);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  font-family: var(--font-mono);
+  color: var(--color-lime);
+  transition: transform 0.8s var(--ease-premium), opacity 0.8s var(--ease-premium);
+}
+
+.preloader-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-align: center;
+}
+
+.preloader-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-linen);
+  opacity: 0.8;
+}
+
+.preloader-progress-container {
+  width: 240px;
+  height: 2px;
+  background-color: var(--color-slate);
+  position: relative;
+  overflow: hidden;
+  margin: var(--spacing-sm) 0;
+}
+
+.preloader-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: var(--color-lime);
+  transition: width 0.1s ease;
+  box-shadow: 0 0 10px var(--color-lime);
+}
+
+.preloader-counter {
+  font-size: 3rem;
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.05em;
+}

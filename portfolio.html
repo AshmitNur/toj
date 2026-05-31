@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apparel Showcase | TØJ Sourcing | Virtual Garment Portfolio</title>
+  <meta name="description" content="Explore TØJ Sourcing's premium apparel portfolio. Technical readouts of knitwear, woven fabrics, raw denim, sustainable organic garments, and engineered outerwear.">
+  <meta name="keywords" content="apparel portfolio, clothing showcase, knitwear manufacturer, denim sourcing, sustainable fashion, clothing supplier Dhaka">
+  <style>body { background-color: #fafaf8; }</style>
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-void">
+
+  <!-- Technical Preloader Overlay -->
+  <div class="preloader" id="site-preloader">
+    <script>
+      if (sessionStorage.getItem('preloader_shown') === 'true') {
+        document.getElementById('site-preloader').style.display = 'none';
+      }
+    </script>
+    <div class="preloader-content">
+      <span class="preloader-title">THREAD INTELLIGENCE // INITIALIZING SYSTEM</span>
+      <div class="preloader-counter">000</div>
+      <div class="preloader-progress-container">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dot Grid Texture Overlay -->
+  <div class="texture-overlay"></div>
+
+  <!-- Shared Navbar Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="logo-container">
+      <img src="assets/Untitled_design.webp" alt="TØJ Sourcing" class="logo-svg">
+    </a>
+    
+    <button class="burger-menu-btn" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="global.html" class="nav-link">Global Presence</a></li>
+      <li><a href="sustainability.html" class="nav-link">Sustainability</a></li>
+      <li><a href="portfolio.html" class="nav-link active">Showcase</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Layout -->
+  <main>
+    
+    <!-- Cinematic Hero Section -->
+    <section class="section-pad bg-void" style="padding-top: 180px; min-height: 90vh; display: flex; align-items: center; position: relative; overflow: hidden;">
+      <!-- Looping background video -->
+      <div class="hero-video-container">
+        <video preload="metadata" autoplay loop muted playsinline class="hero-video-bg">
+          <source src="assets/desisgn.mp4" type="video/mp4">
+        </video>
+        <!-- Overlay Gradient: High-contrast light wash on the left to guarantee perfect legibility, fading completely to transparent on the right to keep video highly visible -->
+        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(250, 250, 248, 0.85) 0%, rgba(250, 250, 248, 0.8) 35%, rgba(250, 250, 248, 0.3) 60%, rgba(250, 250, 248, 0) 85%); z-index: 1;"></div>
+      </div>
+      <div class="container" style="position: relative; z-index: 2;">
+        <div class="grid-12">
+          <div class="asym-left" style="grid-column: span 10;">
+            <span class="label-caps fade-up-trigger">05 // TECHNICAL PORTFOLIO</span>
+            <h1 class="text-display" style="margin-bottom: var(--spacing-lg); color: var(--color-linen);" data-split-reveal>PRODUCT SHELLS</h1>
+            
+            <!-- Technical Monospaced Tagline Readout -->
+            <div class="fade-up-trigger" style="margin-bottom: var(--spacing-xl); padding-left: var(--spacing-sm); border-left: 2px solid var(--color-lime);">
+              <p class="text-mono-lg" style="margin-bottom: var(--spacing-xs);">PRODUCTION LOGS // COMPOSITION READOUT</p>
+              <p class="text-mono-md text-muted">
+                A curated record of our virtual apparel manufacturing capabilities. Each shell represents audited sourcing integrity, optimized fiber blending, and precision manufacturing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apparel Grid Showcase -->
+    <section class="section-pad bg-void">
+      <div class="container">
+        
+
+        <!-- Dynamic Filterable Grid -->
+        <div class="portfolio-grid fade-up-trigger">
+          <!-- Dynamically populated via js/gallery.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Compliance Footer CTA Banner -->
+    <section class="section-pad bg-linen">
+      <div class="container" style="text-align: center;">
+        <div class="fade-up-trigger" style="max-width: 800px; margin: 0 auto;">
+          <span class="label-caps" style="color: var(--color-lime-dim);">TECHNICAL COLLABORATION</span>
+          <h2 class="text-h1" style="color: var(--color-navy); margin-bottom: var(--spacing-md);">CUSTOM DRAFTING &amp; SPECS</h2>
+          <p class="text-mono-md text-muted" style="margin-bottom: var(--spacing-xl); color: var(--color-navy);">
+            Have specific physical weight thresholds or yarn composition ratios required for your brand's seasonal collection? Our London R&amp;D team drafts bespoke tech packs and provides physical textile swatch packages globally within 7 days.
+          </p>
+          <a href="contact.html" class="btn btn-primary" style="background-color: var(--color-navy); color: var(--color-linen);">Initiate Tech Pack Draft</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shared Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo-container" style="margin-bottom: var(--spacing-md);">
+            <img src="assets/Untitled_design.webp" alt="TØJ Sourcing" class="logo-svg">
+          </div>
+          <p class="text-mono-md text-muted" style="line-height: 1.5; margin-bottom: var(--spacing-md);">
+            Integrated virtual apparel manufacturing for international fashion enterprises. Registered office: Mirpur DOHS, Dhaka, Bangladesh.
+          </p>
+          <div style="margin-top: var(--spacing-md);">
+            <span class="label-caps" style="color: var(--color-lime); font-size: 0.7rem; display: block; margin-bottom: 2px;">SAY HI!</span>
+            <a href="mailto:hello@tojsourcing.com" class="text-display" style="font-size: 1.25rem; font-weight: 600; color: var(--color-text-light); text-decoration: none; transition: color var(--transition-fast);">hello@tojsourcing.com</a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Origin</a></li>
+            <li><a href="services.html" class="footer-link">Service Pillars</a></li>
+            <li><a href="global.html" class="footer-link">Global Shells</a></li>
+            <li><a href="sustainability.html" class="footer-link">ESG Standards</a></li>
+            <li><a href="portfolio.html" class="footer-link">Apparel Showcase</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#rd" class="footer-link">Fabric R&amp;D</a></li>
+            <li><a href="services.html#design" class="footer-link">3D CAD Design</a></li>
+            <li><a href="services.html#production" class="footer-link">Bulk Assembly</a></li>
+            <li><a href="services.html#operations" class="footer-link">Compliance Logistics</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">HQ Credentials</h4>
+          <p class="text-mono-md text-muted" style="line-height: 1.5; margin-bottom: var(--spacing-sm);">
+            House-774, Road-11, Avenue-2, Mirpur DOHS,<br>Dhaka-1216, Bangladesh.
+          </p>
+          <p class="text-mono-md text-muted" style="margin-bottom: 4px;">
+            Phone: <span style="color: var(--color-text-light);">+880 171 460 3626</span>
+          </p>
+          <p class="text-mono-md text-muted">
+            Email: <a href="mailto:info@tojsourcing.com" class="footer-link" style="color: var(--color-lime);">info@tojsourcing.com</a>
+          </p>
+        </div>
+      </div>
+      
+      <div style="border-top: 1px solid var(--color-slate); margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--spacing-md);">
+        <p>&copy; 2026 TØJ Sourcing Company Limited. All rights reserved.</p>
+       
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/showcase-data.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
+
