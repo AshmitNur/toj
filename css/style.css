@@ -564,7 +564,7 @@ img[onmouseover]:hover {
 .marquee-track {
   display: flex;
   gap: var(--spacing-xxl);
-  animation: marquee 25s linear infinite;
+  animation: marquee 65s linear infinite; /* Slowed down from 25s */
   white-space: nowrap;
   width: max-content;
 }
@@ -572,14 +572,22 @@ img[onmouseover]:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 36px;
+  height: 48px !important; /* Increased from 36px */
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 800; /* Expanded extra bold weight */
+  font-size: 1.3rem; /* Slightly larger text */
+  font-weight: 800;
   color: var(--color-linen);
   transition: color var(--transition-fast);
   white-space: nowrap;
   vertical-align: middle;
+}
+.marquee-item img {
+  height: 42px !important; /* Larger logos */
+  width: auto;
+}
+.marquee-item svg {
+  width: 28px !important;
+  height: 28px !important;
 }
 .marquee-item:hover {
   color: var(--color-lime);
