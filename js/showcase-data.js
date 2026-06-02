@@ -5,6 +5,14 @@
 
 (function() {
   const SHOWCASE_FILENAMES = [
+    "serial_1.webp",
+    "serial_2.webp",
+    "serial_3.webp",
+    "serial_4.webp",
+    "serial_5.webp",
+    "serial_6.webp",
+    "serial_7.webp",
+    "serial_8.webp",
     "WhatsApp Image 2026-05-27 at 1.16.29 AM (1).webp",
     "WhatsApp Image 2026-05-27 at 1.16.29 AM (2).webp",
     "WhatsApp Image 2026-05-27 at 1.16.29 AM.webp",
@@ -25,7 +33,6 @@
     "WhatsApp Image 2026-05-27 at 1.16.35 AM (2).webp",
     "WhatsApp Image 2026-05-27 at 1.16.35 AM.webp",
     "WhatsApp Image 2026-05-27 at 1.16.36 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.36 AM (2).webp",
     "WhatsApp Image 2026-05-27 at 1.16.36 AM.webp",
     "WhatsApp Image 2026-05-27 at 1.16.37 AM (1).webp",
     "WhatsApp Image 2026-05-27 at 1.16.37 AM (2).webp",
@@ -104,7 +111,18 @@
     "WhatsApp Image 2026-05-27 at 1.17.03 AM.webp",
     "WhatsApp Image 2026-05-27 at 1.17.04 AM (1).webp",
     "WhatsApp Image 2026-05-27 at 1.17.04 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.17.05 AM.webp"
+    "WhatsApp Image 2026-05-27 at 1.17.05 AM.webp",
+    "denim_1.webp",
+    "denim_2.webp",
+    "denim_3.webp",
+    "denim_4.webp",
+    "denim_5.webp",
+    "denim_6.webp",
+    "denim_7.webp",
+    "denim_8.webp",
+    "denim_9.webp",
+    "denim_10.webp",
+    "denim_11.webp"
   ];
 
   const CATEGORIES = ["knitwear", "woven", "denim", "outerwear"];
@@ -193,7 +211,10 @@
   // Map files to dynamic but deterministic metadata objects
   window.SHOWCASE_DATA = SHOWCASE_FILENAMES.map((filename, index) => {
     // Distribute categories evenly
-    const category = CATEGORIES[index % CATEGORIES.length];
+    let category = CATEGORIES[index % CATEGORIES.length];
+    if (filename.startsWith("denim_")) {
+      category = "denim";
+    }
     const template = METADATA_TEMPLATES[category];
 
     // Select templates deterministically using prime numbers to avoid alignment patterns

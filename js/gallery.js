@@ -109,10 +109,10 @@ function initShowcaseGallery() {
         itemEl.style.transform = 'translateY(0) scale(1)';
       }, idx * 40);
 
-      // Click event to trigger dynamic Lightbox
-      itemEl.addEventListener('click', () => {
-        openLightbox(item.id);
-      });
+      // Click event to trigger dynamic Lightbox disabled
+      // itemEl.addEventListener('click', () => {
+      //   openLightbox(item.id);
+      // });
     });
 
     updateLoadMoreButton();

@@ -632,6 +632,7 @@ img[onmouseover]:hover {
   overflow: hidden;
   border: 1px solid var(--color-slate);
   background-color: var(--color-navy);
+  cursor: default;
 }
 .portfolio-img {
   width: 100%;
@@ -839,6 +840,74 @@ footer.site-footer a.text-display:hover {
   color: var(--color-lime);
 }
 
+/* --- Certification Infinite Panning Track --- */
+.cert-pan-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: var(--spacing-md) 0;
+}
+
+.cert-pan-track {
+  display: flex;
+  gap: var(--spacing-xl);
+  animation: cert-pan-motion 35s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+
+/* Graceful pause on hover to allow inspection of items */
+.cert-pan-track:hover {
+  animation-play-state: paused;
+}
+
+.cert-pan-item {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 120px;
+  background-color: #ffffff;
+  border: 1px solid var(--color-slate);
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(22, 38, 59, 0.03);
+  transition: transform var(--transition-medium), border-color var(--transition-medium), box-shadow var(--transition-medium);
+  cursor: pointer;
+}
+
+.cert-pan-item img {
+  height: 75px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.55);
+  transition: filter var(--transition-medium), transform var(--transition-medium);
+}
+
+/* Interactive Lift and Color Restore */
+.cert-pan-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-lime);
+  box-shadow: 0 12px 30px rgba(22, 38, 59, 0.08);
+}
+
+.cert-pan-item:hover img {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.04);
+}
+
+/* Infinite GPU-Accelerated Translation loop */
+@keyframes cert-pan-motion {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 /* --- Responsive Adjustments --- */
 @media (max-width: 1024px) {
   :root {
@@ -993,6 +1062,30 @@ footer.site-footer a.text-display:hover {
   }
   .timeline-content {
     width: 100%;
+  }
+}
+
+/* --- Shared Contact Map and Details Grid --- */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  border: 1px solid var(--color-slate);
+  overflow: hidden;
+  margin-top: var(--spacing-lg);
+}
+
+.contact-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (max-width: 600px) {
+  .contact-details-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
 }
 
