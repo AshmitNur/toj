@@ -119,11 +119,6 @@ function initShowcaseGallery() {
       itemEl.innerHTML = `
         <div class="skeleton-loader" style="position: absolute; inset: 0; background: linear-gradient(90deg, var(--color-navy) 25%, var(--color-slate) 50%, var(--color-navy) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite linear; z-index: 1;"></div>
         <img src="${item.src}" alt="${item.title}" class="portfolio-img" style="opacity: 0; transition: opacity 0.4s ease; z-index: 2; position: relative;">
-        <div class="portfolio-overlay">
-          <h3 class="portfolio-title" style="font-size: 1.25rem;">${item.title}</h3>
-          <p class="portfolio-desc" style="font-size: 0.7rem; color: #a5b9cf; margin-bottom: var(--spacing-sm);">${item.comp}</p>
-          <div class="portfolio-meta" style="font-size: 0.65rem;">WT: ${item.weight} // LEAD: ${item.leadTime}</div>
-        </div>
       `;
 
       div.grid.appendChild(itemEl);
