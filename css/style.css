@@ -850,8 +850,10 @@ footer.site-footer .logo-container {
   justify-content: flex-start; /* Reset alignment for footer placement */
 }
 footer.site-footer .logo-svg {
-  height: 120px; /* Expanded visual height to offset transparent padding */
-  margin: -24px 0; /* Clean vertical spacing */
+  height: 80px; /* Prominent height for cropped logo */
+  width: auto;
+  margin: 0;
+  display: block;
 }
 footer.site-footer a.text-display:hover {
   color: var(--color-lime) !important; /* Vibrant neon hover state for footer email */
