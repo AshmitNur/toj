@@ -163,12 +163,44 @@ function initCounters() {
 
 /* --- Infinite Client Marquee --- */
 function initMarquee() {
-  const track = document.querySelector('.marquee-track');
-  if (!track) return;
+  const marqueeTrack = document.querySelector('.marquee-track');
+  if (!marqueeTrack) return;
   
   // Duplicate contents to ensure infinite flow overlap
-  const content = track.innerHTML;
-  track.innerHTML = content + content + content;
+  const content = marqueeTrack.innerHTML;
+  marqueeTrack.innerHTML = content + content + content;
+  
+  // Calculate dynamic duration to match the velocity of Vetted Production Credentials (.cert-pan-track)
+  matchMarqueeSpeeds();
+  
+  // Also recalculate speed on window resize
+  window.addEventListener('resize', matchMarqueeSpeeds);
+}
+
+function matchMarqueeSpeeds() {
+  const marqueeTrack = document.querySelector('.marquee-track');
+  const certTrack = document.querySelector('.cert-pan-track');
+  if (!marqueeTrack) return;
+  
+  let targetDuration = 218.75; // Default fallback (150 items vs 24 items ratio * 35s)
+  
+  if (certTrack) {
+    const marqueeWidth = marqueeTrack.scrollWidth;
+    const certWidth = certTrack.scrollWidth;
+    if (marqueeWidth && certWidth) {
+      // certTrack translates by -50% in 35s, meaning its velocity is (certWidth / 2) / 35 pixels/sec.
+      // To match that physical speed, marqueeTrack's duration should be:
+      // duration = (marqueeWidth / 2) / ((certWidth / 2) / 35) = (marqueeWidth / certWidth) * 35s
+      targetDuration = (marqueeWidth / certWidth) * 35;
+    }
+  } else {
+    // If certTrack is not present on the current page, fallback using item count ratio
+    // certTrack has 24 items.
+    const marqueeItemsCount = marqueeTrack.children.length;
+    targetDuration = (marqueeItemsCount / 24) * 35;
+  }
+  
+  marqueeTrack.style.animationDuration = `${targetDuration.toFixed(2)}s`;
 }
 
 /* --- Interactive Leaflet Map --- */

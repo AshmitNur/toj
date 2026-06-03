@@ -568,7 +568,7 @@ img[onmouseover]:hover {
 .marquee-track {
   display: flex;
   gap: var(--spacing-xl);
-  animation: marquee 35s linear infinite; /* Matches Vetted Production Credentials speed */
+  animation: marquee 218.75s linear infinite; /* Matches Vetted Production Credentials physical speed */
   white-space: nowrap;
   width: max-content;
 }
