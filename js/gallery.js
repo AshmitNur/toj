@@ -210,18 +210,9 @@ function initShowcaseGallery() {
       <button class="lightbox-close" aria-label="Close Lightbox" style="position: absolute; top: 40px; right: 40px; background: none; border: 0; color: var(--color-linen); font-size: 3rem; cursor: pointer; transition: color 0.3s; z-index: 1010;">&times;</button>
       <button class="lightbox-nav lightbox-prev" aria-label="Previous Image" style="position: absolute; left: 40px; top: 50%; transform: translateY(-50%); background: none; border: 0; color: var(--color-linen); font-size: 2.5rem; cursor: pointer; transition: color 0.3s; z-index: 1010;">&larr;</button>
       <button class="lightbox-nav lightbox-next" aria-label="Next Image" style="position: absolute; right: 40px; top: 50%; transform: translateY(-50%); background: none; border: 0; color: var(--color-linen); font-size: 2.5rem; cursor: pointer; transition: color 0.3s; z-index: 1010;">&rarr;</button>
-      <div class="lightbox-container" style="display: flex; flex-direction: row; width: 90%; max-width: 1200px; height: 80vh; background-color: rgba(7, 13, 20, 0.95); border: 1px solid var(--color-slate); z-index: 1005; overflow: hidden; position: relative;">
+      <div class="lightbox-container" style="display: flex; flex-direction: row; width: 90%; max-width: 900px; height: 80vh; background-color: rgba(7, 13, 20, 0.95); border: 1px solid var(--color-slate); z-index: 1005; overflow: hidden; position: relative;">
         <div class="lightbox-image-wrapper" style="flex: 1; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; padding: var(--spacing-lg); background-color: var(--color-void);">
           <img src="" alt="" class="lightbox-img" style="max-width: 100%; max-height: 100%; object-fit: contain; transition: opacity 0.3s ease;">
-        </div>
-        <div class="lightbox-sidebar" style="width: 320px; border-left: 1px solid var(--color-slate); padding: var(--spacing-xl); display: flex; flex-direction: column; justify-content: center; background-color: var(--color-navy); position: relative;">
-          <span class="lightbox-division label-caps" style="color: var(--color-lime); margin-bottom: var(--spacing-sm);">DIVISION</span>
-          <h3 class="lightbox-title text-h2" style="color: var(--color-linen); margin-bottom: var(--spacing-md); line-height: 1.2;">Garment Title</h3>
-          <div style="border-top: 1px dashed var(--color-slate); padding-top: var(--spacing-lg); margin-top: var(--spacing-md);">
-            <p class="lightbox-comp text-mono-md" style="color: var(--color-linen); margin-bottom: var(--spacing-sm);">COMPOSITION DETAIL</p>
-            <p class="lightbox-weight text-mono-md text-muted" style="margin-bottom: var(--spacing-xs);">WEIGHT SPEC</p>
-            <p class="lightbox-lead text-mono-md text-muted">LEAD TIME SPEC</p>
-          </div>
         </div>
       </div>
     `;
@@ -278,22 +269,12 @@ function initShowcaseGallery() {
     if (!item) return;
 
     const img = lightbox.querySelector('.lightbox-img');
-    const division = lightbox.querySelector('.lightbox-division');
-    const title = lightbox.querySelector('.lightbox-title');
-    const comp = lightbox.querySelector('.lightbox-comp');
-    const weight = lightbox.querySelector('.lightbox-weight');
-    const lead = lightbox.querySelector('.lightbox-lead');
 
     // Fade effect during update
     img.style.opacity = '0';
     setTimeout(() => {
       img.src = item.src;
       img.alt = item.title;
-      division.textContent = item.division;
-      title.textContent = item.title;
-      comp.textContent = `COMP: ${item.comp.toUpperCase()}`;
-      weight.textContent = `WT: ${item.weight}`;
-      lead.textContent = `LEAD TIME: ${item.leadTime}`;
       img.style.opacity = '1';
     }, 150);
   }
