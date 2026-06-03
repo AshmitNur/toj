@@ -476,6 +476,54 @@
     {
         "file": "serial_8.webp",
         "category": "woven"
+    },
+    {
+        "file": "fabrics_1.webp",
+        "category": "fabrics"
+    },
+    {
+        "file": "fabrics_2.webp",
+        "category": "fabrics"
+    },
+    {
+        "file": "fabrics_3.webp",
+        "category": "fabrics"
+    },
+    {
+        "file": "fabrics_4.webp",
+        "category": "fabrics"
+    },
+    {
+        "file": "fabrics_5.webp",
+        "category": "fabrics"
+    },
+    {
+        "file": "fabrics_6.webp",
+        "category": "fabrics"
+    },
+    {
+        "file": "fabrics_7.webp",
+        "category": "fabrics"
+    },
+    {
+        "file": "fabrics_8.webp",
+        "category": "fabrics"
+    },
+    {
+        "file": "fabrics_9.webp",
+        "category": "fabrics"
+    },
+    {
+        "file": "fabrics_10.webp",
+        "category": "fabrics"
+    },
+    {
+        "file": "fabrics_11.webp",
+        "category": "fabrics"
+    },
+    {
+        "file": "fabrics_12.webp",
+        "category": "fabrics"
     }
 ];
 
@@ -548,6 +596,32 @@
       ],
       weights: ["14 OZ", "12 OZ", "13.5 OZ", "11 OZ", "15 OZ"],
       leadTimes: ["80 Days", "85 Days", "75 Days", "90 Days"]
+    },
+    fabrics: {
+      label: "DIV.04 // FABRICS & ACCESSORIES",
+      titles: [
+        "Premium Combed Organic Cotton Yarn",
+        "Recycled Polyester Sewing Threads",
+        "Eco-Friendly Horn Button Assemblies",
+        "High-Tensile Brass Zipper Elements",
+        "GOTS Certified Cotton Canvas Fabric",
+        "Sustainable Hemp Canvas Roll",
+        "Soft Bamboo Jersey Knit Fabric",
+        "Structured Wool Blend Interlining",
+        "Recycled Cotton Pocketing Twill",
+        "Heavyweight Selvedge Canvas Roll"
+      ],
+      compositions: [
+        "100% GOTS Certified Organic Cotton",
+        "100% Recycled Post-Consumer Polyester",
+        "Natural Eco-Harvested Buffalo Horn",
+        "Solid Lead-Free Recycled Brass",
+        "100% Belgian Flax Flax Fabric",
+        "55% Hemp, 45% Organic Cotton Blend",
+        "70% Bamboo Viscose, 30% Organic Cotton"
+      ],
+      weights: ["180 GSM", "240 GSM", "300 GSM", "120 GSM", "150 GSM", "400 GSM"],
+      leadTimes: ["45 Days", "50 Days", "60 Days", "55 Days"]
     }
   };
 

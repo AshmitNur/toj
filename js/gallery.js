@@ -15,6 +15,7 @@ function initShowcaseGallery() {
   const knitItems = window.SHOWCASE_DATA.filter(item => item.category === 'knit');
   const wovenItems = window.SHOWCASE_DATA.filter(item => item.category === 'woven');
   const denimItems = window.SHOWCASE_DATA.filter(item => item.category === 'denim');
+  const fabricsItems = window.SHOWCASE_DATA.filter(item => item.category === 'fabrics');
 
   // Define division grid managers
   const divisions = [
@@ -41,6 +42,14 @@ function initShowcaseGallery() {
       items: denimItems,
       currentPage: 1,
       itemsPerPage: 6
+    },
+    {
+      category: 'fabrics',
+      grid: document.querySelector('.fabrics-grid'),
+      loadMoreContainer: document.getElementById('fabrics-load-more-container'),
+      items: fabricsItems,
+      currentPage: 1,
+      itemsPerPage: 6
     }
   ];
 
@@ -60,7 +69,8 @@ function initShowcaseGallery() {
     const sections = {
       knit: document.querySelector('.knit-division-section'),
       woven: document.querySelector('.woven-division-section'),
-      denim: document.querySelector('.denim-division-section')
+      denim: document.querySelector('.denim-division-section'),
+      fabrics: document.querySelector('.fabrics-division-section')
     };
 
     filterButtons.forEach(btn => {
