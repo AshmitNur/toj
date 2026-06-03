@@ -561,42 +561,70 @@ img[onmouseover]:hover {
 .marquee-container {
   overflow: hidden;
   width: 100%;
+  position: relative;
   display: flex;
-  border-top: 1px solid var(--color-slate);
-  border-bottom: 1px solid var(--color-slate);
-  padding: var(--spacing-lg) 0;
-  background-color: var(--color-void);
+  padding: var(--spacing-md) 0;
 }
 .marquee-track {
   display: flex;
-  gap: var(--spacing-xxl);
+  gap: var(--spacing-xl);
   animation: marquee 65s linear infinite; /* Slowed down from 25s */
   white-space: nowrap;
   width: max-content;
 }
+.marquee-track:hover {
+  animation-play-state: paused;
+}
 .marquee-item {
+  flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 48px !important; /* Increased from 36px */
+  width: 220px;
+  height: 120px !important; /* Increased from 36px */
+  background-color: #ffffff !important;
+  border: 1px solid var(--color-slate) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 15px rgba(22, 38, 59, 0.03);
+  transition: transform var(--transition-medium), border-color var(--transition-medium), box-shadow var(--transition-medium);
+  cursor: pointer;
+  color: var(--color-navy) !important;
   font-family: var(--font-display);
-  font-size: 1.3rem; /* Slightly larger text */
+  font-size: 1.15rem; /* Proportional text */
   font-weight: 800;
-  color: var(--color-linen);
-  transition: color var(--transition-fast);
   white-space: nowrap;
   vertical-align: middle;
 }
+.marquee-item span[style*="background-color: var(--color-linen)"] {
+  background-color: var(--color-navy) !important;
+  color: var(--color-linen) !important;
+}
 .marquee-item img {
-  height: 42px !important; /* Larger logos */
+  height: 68px !important; /* Larger logos to match cert badges */
   width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.55) !important;
+  transition: filter var(--transition-medium), transform var(--transition-medium) !important;
 }
 .marquee-item svg {
   width: 28px !important;
   height: 28px !important;
+  filter: grayscale(100%) opacity(0.55) !important;
+  transition: filter var(--transition-medium), transform var(--transition-medium) !important;
 }
 .marquee-item:hover {
-  color: var(--color-lime);
+  transform: translateY(-4px);
+  border-color: var(--color-lime) !important;
+  box-shadow: 0 12px 30px rgba(22, 38, 59, 0.08);
+}
+.marquee-item:hover img {
+  filter: grayscale(0%) opacity(1) !important;
+  transform: scale(1.04) !important;
+}
+.marquee-item:hover svg {
+  filter: grayscale(0%) opacity(1) !important;
+  transform: scale(1.04) !important;
 }
 
 @keyframes marquee {
