@@ -36,11 +36,11 @@
   /* Layout Constants */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 32px;
-  --spacing-xl: 64px;
-  --spacing-xxl: 128px;
-  --spacing-huge: 200px;
+  --spacing-md: 14px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 96px;
+  --spacing-huge: 140px;
 }
 
 /* --- Base Resets & Structure --- */
@@ -130,6 +130,12 @@ body {
   padding-top: var(--spacing-huge);
   padding-bottom: var(--spacing-huge);
   position: relative;
+}
+
+/* Adjust inline-styled hero sections globally on desktop for conciseness */
+section.section-pad[style*="padding-top: 180px"] {
+  padding-top: 140px !important;
+  min-height: 70vh !important;
 }
 
 /* 1px Structural Rules */
@@ -919,7 +925,7 @@ footer.site-footer a.text-display:hover {
 /* --- Responsive Adjustments --- */
 @media (max-width: 1024px) {
   :root {
-    --spacing-huge: 120px;
+    --spacing-huge: 100px;
   }
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -931,8 +937,8 @@ footer.site-footer a.text-display:hover {
 
 @media (max-width: 768px) {
   :root {
-    --spacing-huge: 80px;
-    --spacing-xl: 48px;
+    --spacing-huge: 70px;
+    --spacing-xl: 36px;
   }
   .container {
     padding: 0 var(--spacing-md) !important; /* Expanded horizontal real estate on mobile */
@@ -940,8 +946,8 @@ footer.site-footer a.text-display:hover {
   
   /* Proportional mobile spacing overrides for inline-styled hero sections */
   section.section-pad[style*="padding-top: 180px"] {
-    padding-top: 120px !important;
-    min-height: 80vh !important;
+    padding-top: 100px !important;
+    min-height: 60vh !important;
   }
   
   /* Optimize inline repeat(5, 1fr) stats grid to prevent mobile text squishing */

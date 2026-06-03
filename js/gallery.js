@@ -1,6 +1,7 @@
 /**
  * TØJ SOURCING — DYNAMIC SHOWCASE GALLERY LOGIC
- * Manages grid rendering, pagination, dynamic filtering, and premium lightbox mechanics.
+ * Manages grid rendering, pagination, dynamic filtering, and premium lightbox mechanics
+ * for the Knit, Woven, and Denim divisions separately.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,70 +9,102 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initShowcaseGallery() {
-  const gridWrapper = document.querySelector('.portfolio-grid');
-  const filterControls = document.querySelector('.filter-controls');
-  if (!gridWrapper || !window.SHOWCASE_DATA) return;
+  if (!window.SHOWCASE_DATA) return;
 
-  let filteredItems = [...window.SHOWCASE_DATA];
-  let activeFilter = 'all';
-  let currentPage = 1;
-  const itemsPerPage = 12;
+  // Separate data by division
+  const knitItems = window.SHOWCASE_DATA.filter(item => item.category === 'knit');
+  const wovenItems = window.SHOWCASE_DATA.filter(item => item.category === 'woven');
+  const denimItems = window.SHOWCASE_DATA.filter(item => item.category === 'denim');
 
-  // Set up portfolio grid styles to prevent inline layouts
-  gridWrapper.innerHTML = '';
-
-  // Ensure "Load More" container exists
-  let loadMoreContainer = document.getElementById('load-more-container');
-  if (!loadMoreContainer) {
-    loadMoreContainer = document.createElement('div');
-    loadMoreContainer.id = 'load-more-container';
-    loadMoreContainer.style.textAlign = 'center';
-    loadMoreContainer.style.marginTop = 'var(--spacing-xl)';
-    gridWrapper.parentNode.insertBefore(loadMoreContainer, gridWrapper.nextSibling);
-  }
+  // Define division grid managers
+  const divisions = [
+    {
+      category: 'knit',
+      grid: document.querySelector('.knit-grid'),
+      loadMoreContainer: document.getElementById('knit-load-more-container'),
+      items: knitItems,
+      currentPage: 1,
+      itemsPerPage: 6
+    },
+    {
+      category: 'woven',
+      grid: document.querySelector('.woven-grid'),
+      loadMoreContainer: document.getElementById('woven-load-more-container'),
+      items: wovenItems,
+      currentPage: 1,
+      itemsPerPage: 6
+    },
+    {
+      category: 'denim',
+      grid: document.querySelector('.denim-grid'),
+      loadMoreContainer: document.getElementById('denim-load-more-container'),
+      items: denimItems,
+      currentPage: 1,
+      itemsPerPage: 6
+    }
+  ];
 
   // Create the Lightbox structure dynamically
   createLightbox();
 
-  // Render first batch
-  renderGallery();
+  // Render each division
+  divisions.forEach(div => {
+    if (!div.grid) return;
+    renderDivision(div);
+  });
 
-  // Attach dynamic filter click listeners
+  // Handle tab switching for divisions
+  const filterControls = document.querySelector('.filter-controls');
   if (filterControls) {
-    // Clear old static event handlers
     const filterButtons = filterControls.querySelectorAll('.filter-btn');
+    const sections = {
+      knit: document.querySelector('.knit-division-section'),
+      woven: document.querySelector('.woven-division-section'),
+      denim: document.querySelector('.denim-division-section')
+    };
+
     filterButtons.forEach(btn => {
-      // Replace with clean event listener
-      const newBtn = btn.cloneNode(true);
-      btn.parentNode.replaceChild(newBtn, btn);
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
 
-      newBtn.addEventListener('click', () => {
-        filterControls.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        newBtn.classList.add('active');
-
-        activeFilter = newBtn.getAttribute('data-filter');
-        currentPage = 1;
-
-        if (activeFilter === 'all') {
-          filteredItems = [...window.SHOWCASE_DATA];
-        } else {
-          filteredItems = window.SHOWCASE_DATA.filter(item => item.category === activeFilter);
-        }
-
-        renderGallery(true); // Reset grid and animate
+        // Show/hide sections
+        const targetDiv = btn.getAttribute('data-division');
+        Object.keys(sections).forEach(key => {
+          if (sections[key]) {
+            if (key === targetDiv) {
+              sections[key].style.display = 'block';
+              
+              // Trigger stagger entrance animation for visible items in this division
+              const items = sections[key].querySelectorAll('.portfolio-item');
+              items.forEach((item, idx) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px) scale(0.98)';
+                setTimeout(() => {
+                  item.style.opacity = '1';
+                  item.style.transform = 'translateY(0) scale(1)';
+                }, idx * 40);
+              });
+            } else {
+              sections[key].style.display = 'none';
+            }
+          }
+        });
       });
     });
   }
 
-  // Gallery render function
-  function renderGallery(reset = false) {
-    if (reset) {
-      gridWrapper.innerHTML = '';
+  // Render logic per division
+  function renderDivision(div, append = false) {
+    if (!append) {
+      div.grid.innerHTML = '';
     }
 
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = Math.min(start + itemsPerPage, filteredItems.length);
-    const visibleBatch = filteredItems.slice(start, end);
+    const start = append ? (div.currentPage - 1) * div.itemsPerPage : 0;
+    const end = Math.min(div.currentPage * div.itemsPerPage, div.items.length);
+    const visibleBatch = div.items.slice(start, end);
 
     visibleBatch.forEach((item, idx) => {
       const itemEl = document.createElement('div');
@@ -81,13 +114,19 @@ function initShowcaseGallery() {
       itemEl.style.opacity = '0';
       itemEl.style.transform = 'translateY(20px) scale(0.98)';
       itemEl.style.transition = 'opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+      itemEl.style.cursor = 'pointer';
 
       itemEl.innerHTML = `
         <div class="skeleton-loader" style="position: absolute; inset: 0; background: linear-gradient(90deg, var(--color-navy) 25%, var(--color-slate) 50%, var(--color-navy) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite linear; z-index: 1;"></div>
         <img src="${item.src}" alt="${item.title}" class="portfolio-img" style="opacity: 0; transition: opacity 0.4s ease; z-index: 2; position: relative;">
+        <div class="portfolio-overlay">
+          <h3 class="portfolio-title" style="font-size: 1.25rem;">${item.title}</h3>
+          <p class="portfolio-desc" style="font-size: 0.7rem; color: #a5b9cf; margin-bottom: var(--spacing-sm);">${item.comp}</p>
+          <div class="portfolio-meta" style="font-size: 0.65rem;">WT: ${item.weight} // LEAD: ${item.leadTime}</div>
+        </div>
       `;
 
-      gridWrapper.appendChild(itemEl);
+      div.grid.appendChild(itemEl);
 
       // Handle image load to fade skeleton
       const img = itemEl.querySelector('.portfolio-img');
@@ -109,31 +148,33 @@ function initShowcaseGallery() {
         itemEl.style.transform = 'translateY(0) scale(1)';
       }, idx * 40);
 
-      // Click event to trigger dynamic Lightbox disabled
-      // itemEl.addEventListener('click', () => {
-      //   openLightbox(item.id);
-      // });
+      // Click event to trigger dynamic Lightbox
+      itemEl.addEventListener('click', () => {
+        openLightbox(item.id);
+      });
     });
 
-    updateLoadMoreButton();
+    updateLoadMoreButton(div);
   }
 
-  // Pagination management button
-  function updateLoadMoreButton() {
-    loadMoreContainer.innerHTML = '';
-    const totalItems = filteredItems.length;
-    const currentlyShown = Math.min(currentPage * itemsPerPage, totalItems);
+  // Pagination management button per division
+  function updateLoadMoreButton(div) {
+    if (!div.loadMoreContainer) return;
+    div.loadMoreContainer.innerHTML = '';
+    
+    const totalItems = div.items.length;
+    const currentlyShown = Math.min(div.currentPage * div.itemsPerPage, totalItems);
 
     if (currentlyShown < totalItems) {
       const loadBtn = document.createElement('button');
       loadBtn.className = 'btn btn-secondary';
-      loadBtn.style.padding = '18px 40px';
-      loadBtn.innerHTML = `LOAD MORE DIVISIONS (${currentlyShown} / ${totalItems})`;
+      loadBtn.style.padding = '14px 30px';
+      loadBtn.innerHTML = `LOAD MORE (${currentlyShown} / ${totalItems})`;
       loadBtn.addEventListener('click', () => {
-        currentPage++;
-        renderGallery(false);
+        div.currentPage++;
+        renderDivision(div, true);
       });
-      loadMoreContainer.appendChild(loadBtn);
+      div.loadMoreContainer.appendChild(loadBtn);
     } else {
       const fullyLoadedText = document.createElement('div');
       fullyLoadedText.style.fontFamily = 'var(--font-mono)';
@@ -144,17 +185,18 @@ function initShowcaseGallery() {
       fullyLoadedText.style.display = 'inline-flex';
       fullyLoadedText.style.alignItems = 'center';
       fullyLoadedText.style.gap = '8px';
-      fullyLoadedText.style.padding = '20px 0';
+      fullyLoadedText.style.padding = '15px 0';
       fullyLoadedText.innerHTML = `
         <span class="active-pulse" style="display: inline-block; width: 8px; height: 8px; background-color: var(--color-lime); border-radius: 50%; box-shadow: 0 0 8px var(--color-lime); animation: pulse-dot 1.5s infinite ease-in-out;"></span>
-        ALL SHELLS FULLY LOADED // ${totalItems} OF ${totalItems} ITEMS
+        FULLY LOADED // ${totalItems} ITEMS
       `;
-      loadMoreContainer.appendChild(fullyLoadedText);
+      div.loadMoreContainer.appendChild(fullyLoadedText);
     }
   }
 
   // --- Dynamic Lightbox Components ---
   let activeLightboxIndex = 0;
+  let filteredItems = [];
 
   function createLightbox() {
     if (document.getElementById('gallery-lightbox')) return;
@@ -173,7 +215,7 @@ function initShowcaseGallery() {
           <img src="" alt="" class="lightbox-img" style="max-width: 100%; max-height: 100%; object-fit: contain; transition: opacity 0.3s ease;">
         </div>
         <div class="lightbox-sidebar" style="width: 320px; border-left: 1px solid var(--color-slate); padding: var(--spacing-xl); display: flex; flex-direction: column; justify-content: center; background-color: var(--color-navy); position: relative;">
-          <span class="lightbox-division label-caps" style="color: var(--color-lime); margin-bottom: var(--spacing-sm);">DIV.01 // KNITWEAR</span>
+          <span class="lightbox-division label-caps" style="color: var(--color-lime); margin-bottom: var(--spacing-sm);">DIVISION</span>
           <h3 class="lightbox-title text-h2" style="color: var(--color-linen); margin-bottom: var(--spacing-md); line-height: 1.2;">Garment Title</h3>
           <div style="border-top: 1px dashed var(--color-slate); padding-top: var(--spacing-lg); margin-top: var(--spacing-md);">
             <p class="lightbox-comp text-mono-md" style="color: var(--color-linen); margin-bottom: var(--spacing-sm);">COMPOSITION DETAIL</p>
@@ -212,7 +254,14 @@ function initShowcaseGallery() {
     const lightbox = document.getElementById('gallery-lightbox');
     if (!lightbox) return;
 
-    activeLightboxIndex = filteredItems.findIndex(item => item.id === itemId);
+    // Find the item globally
+    const item = window.SHOWCASE_DATA.find(i => i.id === itemId);
+    if (!item) return;
+
+    // Group items by category for division-based slideshow navigation
+    filteredItems = window.SHOWCASE_DATA.filter(i => i.category === item.category);
+
+    activeLightboxIndex = filteredItems.findIndex(i => i.id === itemId);
     if (activeLightboxIndex === -1) return;
 
     updateLightboxContent();
@@ -263,6 +312,7 @@ function initShowcaseGallery() {
     updateLightboxContent();
   }
 
+  // Next Lightbox
   function nextLightbox() {
     if (filteredItems.length === 0) return;
     activeLightboxIndex = (activeLightboxIndex + 1) % filteredItems.length;

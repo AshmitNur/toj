@@ -726,9 +726,53 @@
           Explore finalized style outputs from our divisions, check weight distributions, or view technical composition sheets.
         </p>
 
-        <!-- Filterable Grid -->
-        <div class="portfolio-grid fade-up-trigger">
-          <!-- Dynamically populated via js/gallery.js -->
+        <!-- Division Selectors -->
+        <div class="filter-controls" style="margin-bottom: var(--spacing-xxl); display: flex; justify-content: center; gap: var(--spacing-md);">
+          <button class="filter-btn active" data-division="knit">Knitwear</button>
+          <button class="filter-btn" data-division="woven">Woven</button>
+          <button class="filter-btn" data-division="denim">Denim</button>
+        </div>
+
+        <!-- Knit Division Section -->
+        <div class="showcase-division-section knit-division-section" style="display: block;">
+          <div style="margin-bottom: var(--spacing-lg); border-left: 2px solid var(--color-lime); padding-left: var(--spacing-sm);">
+            <span class="label-caps" style="color: var(--color-lime);">DIV.01 // KNIT DIVISION</span>
+            <h2 class="text-h2" style="color: var(--color-linen); margin-top: 4px; margin-bottom: 4px;">KNITWEAR PORTFOLIO</h2>
+            <p class="text-mono-md text-muted">Precision extra-fine merino wool, Mongolian cashmere, and GOTS organic cotton loopback jersey shells.</p>
+          </div>
+          <div class="portfolio-grid knit-grid fade-up-trigger">
+            <!-- Populated via js/gallery.js -->
+          </div>
+          <!-- Load More container for Knit -->
+          <div id="knit-load-more-container" style="text-align: center; margin-top: var(--spacing-xl);"></div>
+        </div>
+
+        <!-- Woven Division Section -->
+        <div class="showcase-division-section woven-division-section" style="display: none;">
+          <div style="margin-bottom: var(--spacing-lg); border-left: 2px solid var(--color-lime); padding-left: var(--spacing-sm);">
+            <span class="label-caps" style="color: var(--color-lime);">DIV.02 // WOVEN DIVISION</span>
+            <h2 class="text-h2" style="color: var(--color-linen); margin-top: 4px; margin-bottom: 4px;">WOVEN PORTFOLIO</h2>
+            <p class="text-mono-md text-muted">Premium cotton twill Oxford shirts, organic flax linen utility blouses, and technical micro-grid ripstop shells.</p>
+          </div>
+          <div class="portfolio-grid woven-grid fade-up-trigger">
+            <!-- Populated via js/gallery.js -->
+          </div>
+          <!-- Load More container for Woven -->
+          <div id="woven-load-more-container" style="text-align: center; margin-top: var(--spacing-xl);"></div>
+        </div>
+
+        <!-- Denim Division Section -->
+        <div class="showcase-division-section denim-division-section" style="display: none;">
+          <div style="margin-bottom: var(--spacing-lg); border-left: 2px solid var(--color-lime); padding-left: var(--spacing-sm);">
+            <span class="label-caps" style="color: var(--color-lime);">DIV.03 // DENIM DIVISION</span>
+            <h2 class="text-h2" style="color: var(--color-linen); margin-top: 4px; margin-bottom: 4px;">DENIM PORTFOLIO</h2>
+            <p class="text-mono-md text-muted">Heavyweight 14oz selvedge raw indigo denim, ring-spun jeans, and classic western denim shirts.</p>
+          </div>
+          <div class="portfolio-grid denim-grid fade-up-trigger">
+            <!-- Populated via js/gallery.js -->
+          </div>
+          <!-- Load More container for Denim -->
+          <div id="denim-load-more-container" style="text-align: center; margin-top: var(--spacing-xl);"></div>
         </div>
       </div>
     </section>

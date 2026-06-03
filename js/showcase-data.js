@@ -1,134 +1,486 @@
 /**
  * TØJ SOURCING — THREAD INTELLIGENCE SHOWCASE DATABASE
- * Programmatic virtual apparel catalog containing all 100 assets from assets/CHOBI
+ * Programmatic virtual apparel catalog containing all assets from assets/CHOBI
  */
 
 (function() {
-  const SHOWCASE_FILENAMES = [
-    "serial_1.webp",
-    "serial_2.webp",
-    "serial_3.webp",
-    "serial_4.webp",
-    "serial_5.webp",
-    "serial_6.webp",
-    "serial_7.webp",
-    "serial_8.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.29 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.29 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.29 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.30 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.30 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.30 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.31 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.31 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.32 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.32 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.32 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.33 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.33 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.33 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.34 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.34 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.35 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.35 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.35 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.36 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.36 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.37 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.37 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.37 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.38 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.38 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.39 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.39 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.39 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.40 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.40 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.40 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.41 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.41 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.42 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.42 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.42 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.43 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.43 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.43 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.44 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.44 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.45 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.45 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.45 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.46 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.46 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.46 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.47 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.47 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.48 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.48 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.48 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.49 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.49 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.49 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.50 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.50 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.51 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.51 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.51 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.52 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.52 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.52 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.53 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.53 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.53 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.54 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.54 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.54 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.55 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.55 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.56 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.56 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.56 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.57 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.57 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.57 AM (3).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.57 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.58 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.58 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.58 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.16.59 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.16.59 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.17.00 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.17.00 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.17.00 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.17.01 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.17.01 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.17.01 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.17.02 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.17.02 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.17.02 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.17.03 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.17.03 AM (2).webp",
-    "WhatsApp Image 2026-05-27 at 1.17.03 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.17.04 AM (1).webp",
-    "WhatsApp Image 2026-05-27 at 1.17.04 AM.webp",
-    "WhatsApp Image 2026-05-27 at 1.17.05 AM.webp",
-    "denim_1.webp",
-    "denim_2.webp",
-    "denim_3.webp",
-    "denim_4.webp",
-    "denim_5.webp",
-    "denim_6.webp",
-    "denim_7.webp",
-    "denim_8.webp",
-    "denim_9.webp",
-    "denim_10.webp",
-    "denim_11.webp"
-  ];
-
-  const CATEGORIES = ["knitwear", "woven", "denim", "outerwear"];
+  const SHOWCASE_ITEMS = [
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.29 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.29 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.29 AM.webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.30 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.30 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.30 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.31 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.31 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.32 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.32 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.32 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.33 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.33 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.33 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.34 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.34 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.35 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.35 AM (2).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.35 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.36 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.36 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.37 AM (1).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.37 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.37 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.38 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.38 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.39 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.39 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.39 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.40 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.40 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.40 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.41 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.41 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.42 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.42 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.42 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.43 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.43 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.43 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.44 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.44 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.45 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.45 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.45 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.46 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.46 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.46 AM.webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.47 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.47 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.48 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.48 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.48 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.49 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.49 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.49 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.50 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.50 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.51 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.51 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.51 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.52 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.52 AM (2).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.52 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.53 AM (1).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.53 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.53 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.54 AM (1).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.54 AM (2).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.54 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.55 AM (1).webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.55 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.56 AM (1).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.56 AM (2).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.56 AM.webp",
+        "category": "knit"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.57 AM (1).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.57 AM (2).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.57 AM (3).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.57 AM.webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.58 AM (1).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.58 AM (2).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.58 AM.webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.59 AM (1).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.16.59 AM.webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.00 AM (1).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.00 AM (2).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.00 AM.webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.01 AM (1).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.01 AM (2).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.01 AM.webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.02 AM (1).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.02 AM (2).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.02 AM.webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.03 AM (1).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.03 AM (2).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.03 AM.webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.04 AM (1).webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.04 AM.webp",
+        "category": "woven"
+    },
+    {
+        "file": "WhatsApp Image 2026-05-27 at 1.17.05 AM.webp",
+        "category": "woven"
+    },
+    {
+        "file": "denim_1.webp",
+        "category": "denim"
+    },
+    {
+        "file": "denim_10.webp",
+        "category": "denim"
+    },
+    {
+        "file": "denim_11.webp",
+        "category": "denim"
+    },
+    {
+        "file": "denim_2.webp",
+        "category": "denim"
+    },
+    {
+        "file": "denim_3.webp",
+        "category": "denim"
+    },
+    {
+        "file": "denim_4.webp",
+        "category": "denim"
+    },
+    {
+        "file": "denim_5.webp",
+        "category": "denim"
+    },
+    {
+        "file": "denim_6.webp",
+        "category": "denim"
+    },
+    {
+        "file": "denim_7.webp",
+        "category": "denim"
+    },
+    {
+        "file": "denim_8.webp",
+        "category": "denim"
+    },
+    {
+        "file": "denim_9.webp",
+        "category": "denim"
+    },
+    {
+        "file": "serial_1.webp",
+        "category": "knit"
+    },
+    {
+        "file": "serial_2.webp",
+        "category": "denim"
+    },
+    {
+        "file": "serial_3.webp",
+        "category": "denim"
+    },
+    {
+        "file": "serial_4.webp",
+        "category": "woven"
+    },
+    {
+        "file": "serial_5.webp",
+        "category": "woven"
+    },
+    {
+        "file": "serial_6.webp",
+        "category": "knit"
+    },
+    {
+        "file": "serial_7.webp",
+        "category": "knit"
+    },
+    {
+        "file": "serial_8.webp",
+        "category": "woven"
+    }
+];
 
   const METADATA_TEMPLATES = {
-    knitwear: {
+    knit: {
       label: "DIV.01 // KNITWEAR",
       titles: [
         "12GG Cashmere Crewneck",
@@ -136,7 +488,10 @@
         "Heavy Ribbed Knit Sweater",
         "Merino Wool Turtleneck",
         "Recycled Cotton Loopback Hoodie",
-        "Lightweight Knit Polo"
+        "Lightweight Knit Polo",
+        "Premium Cotton Pullover",
+        "Bouclé Knit Overshirt",
+        "Textured Cable-Knit Crew"
       ],
       compositions: [
         "70% Mongolian Cashmere, 30% Merino Wool",
@@ -156,17 +511,23 @@
         "Hemp Utility Chore Jacket",
         "Structured Poplin Shirt",
         "Tactical Cargo Overshirt",
-        "Classic Twill Dress Shirt"
+        "Classic Twill Dress Shirt",
+        "Waterproof Technical Parka",
+        "Recycled Ripstop Windbreaker",
+        "Engineered Micro-Grid Shell",
+        "Modular Storm Jacket"
       ],
       compositions: [
         "100% Long-Staple Organic Cotton",
         "55% Sustainable Hemp, 45% Organic Cotton",
         "100% Belgian Flax Organic Linen",
         "80% Organic Cotton, 20% Recycled Linen",
-        "100% Premium Cotton Twill"
+        "100% Premium Cotton Twill",
+        "100% Recycled Post-Consumer Nylon Ripstop",
+        "3-Layer Waterproof Breathable Technical Membrane"
       ],
-      weights: ["130 GSM", "320 GSM", "150 GSM", "115 GSM", "180 GSM"],
-      leadTimes: ["60 Days", "70 Days", "65 Days", "75 Days"]
+      weights: ["130 GSM", "320 GSM", "150 GSM", "115 GSM", "180 GSM", "220 GSM", "200 GSM"],
+      leadTimes: ["60 Days", "70 Days", "65 Days", "75 Days", "90 Days", "85 Days"]
     },
     denim: {
       label: "DIV.03 // DENIM",
@@ -176,7 +537,8 @@
         "Premium Indigo Selvedge Jeans",
         "Heavyweight Utility Denim Vest",
         "Slim-Fit Organic Denim Pants",
-        "Classic Western Denim Shirt"
+        "Classic Western Denim Shirt",
+        "Distressed Denim Chore Coat"
       ],
       compositions: [
         "100% Organic Selvedge Cotton",
@@ -186,36 +548,12 @@
       ],
       weights: ["14 OZ", "12 OZ", "13.5 OZ", "11 OZ", "15 OZ"],
       leadTimes: ["80 Days", "85 Days", "75 Days", "90 Days"]
-    },
-    outerwear: {
-      label: "DIV.04 // OUTERWEAR",
-      titles: [
-        "Engineered Micro-Grid Shell",
-        "Waterproof Technical Parka",
-        "Recycled Ripstop Windbreaker",
-        "Insulated Sourcing Shell",
-        "Modular Storm Jacket",
-        "Lightweight Hybrid Anorak"
-      ],
-      compositions: [
-        "100% Recycled Post-Consumer Nylon Ripstop",
-        "3-Layer Waterproof Breathable Technical Membrane",
-        "100% Recycled Polyester Outer Shell with DWR Coating",
-        "80% Recycled Nylon, 20% Engineered Polyester"
-      ],
-      weights: ["180 GSM", "220 GSM", "200 GSM", "150 GSM", "260 GSM"],
-      leadTimes: ["90 Days", "85 Days", "80 Days", "95 Days"]
     }
   };
 
   // Map files to dynamic but deterministic metadata objects
-  window.SHOWCASE_DATA = SHOWCASE_FILENAMES.map((filename, index) => {
-    // Distribute categories evenly
-    let category = CATEGORIES[index % CATEGORIES.length];
-    if (filename.startsWith("denim_")) {
-      category = "denim";
-    }
-    const template = METADATA_TEMPLATES[category];
+  window.SHOWCASE_DATA = SHOWCASE_ITEMS.map((item, index) => {
+    const template = METADATA_TEMPLATES[item.category];
 
     // Select templates deterministically using prime numbers to avoid alignment patterns
     const title = template.titles[(index * 7) % template.titles.length];
@@ -224,9 +562,9 @@
     const leadTime = template.leadTimes[(index * 23) % template.leadTimes.length];
 
     return {
-      id: `toj-shell-${index + 1}`,
-      src: `assets/CHOBI/${filename}`,
-      category: category,
+      id: "toj-shell-" + (index + 1),
+      src: "assets/CHOBI/" + item.file,
+      category: item.category,
       division: template.label,
       title: title,
       comp: comp,
