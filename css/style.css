@@ -568,7 +568,7 @@ img[onmouseover]:hover {
 .marquee-track {
   display: flex;
   gap: var(--spacing-xl);
-  animation: marquee 65s linear infinite; /* Slowed down from 25s */
+  animation: marquee 90s linear infinite; /* Slower panning speed */
   white-space: nowrap;
   width: max-content;
 }
@@ -604,14 +604,16 @@ img[onmouseover]:hover {
   width: auto;
   max-width: 170px;
   object-fit: contain;
-  filter: grayscale(100%) opacity(0.55) !important;
-  transition: filter var(--transition-medium), transform var(--transition-medium) !important;
+  filter: none !important; /* No grayscale filter */
+  opacity: 0.85 !important;
+  transition: opacity var(--transition-medium), transform var(--transition-medium) !important;
 }
 .marquee-item svg {
   width: 28px !important;
   height: 28px !important;
-  filter: grayscale(100%) opacity(0.55) !important;
-  transition: filter var(--transition-medium), transform var(--transition-medium) !important;
+  filter: none !important; /* No grayscale filter */
+  opacity: 0.85 !important;
+  transition: opacity var(--transition-medium), transform var(--transition-medium) !important;
 }
 .marquee-item:hover {
   transform: translateY(-4px);
@@ -619,11 +621,11 @@ img[onmouseover]:hover {
   box-shadow: 0 12px 30px rgba(22, 38, 59, 0.08);
 }
 .marquee-item:hover img {
-  filter: grayscale(0%) opacity(1) !important;
+  opacity: 1 !important;
   transform: scale(1.04) !important;
 }
 .marquee-item:hover svg {
-  filter: grayscale(0%) opacity(1) !important;
+  opacity: 1 !important;
   transform: scale(1.04) !important;
 }
 
