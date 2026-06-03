@@ -5,7 +5,7 @@
 
 (function() {
   const SHOWCASE_ITEMS = [
-    {
+        {
         "file": "WhatsApp Image 2026-05-27 at 1.16.29 AM (1).webp",
         "category": "knit"
     },
@@ -75,7 +75,7 @@
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.35 AM (2).webp",
-        "category": "woven"
+        "category": "knit"
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.35 AM.webp",
@@ -195,7 +195,7 @@
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.46 AM.webp",
-        "category": "woven"
+        "category": "knit"
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.47 AM (1).webp",
@@ -251,7 +251,7 @@
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.52 AM (1).webp",
-        "category": "knit"
+        "category": "woven"
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.52 AM (2).webp",
@@ -291,11 +291,11 @@
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.55 AM.webp",
-        "category": "knit"
+        "category": "woven"
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.56 AM (1).webp",
-        "category": "woven"
+        "category": "knit"
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.56 AM (2).webp",
@@ -307,7 +307,7 @@
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.57 AM (1).webp",
-        "category": "woven"
+        "category": "knit"
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.57 AM (2).webp",
@@ -315,7 +315,7 @@
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.57 AM (3).webp",
-        "category": "woven"
+        "category": "knit"
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.57 AM.webp",
@@ -391,7 +391,7 @@
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.17.04 AM (1).webp",
-        "category": "woven"
+        "category": "knit"
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.17.04 AM.webp",
@@ -399,7 +399,7 @@
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.17.05 AM.webp",
-        "category": "woven"
+        "category": "knit"
     },
     {
         "file": "denim_1.webp",
@@ -407,11 +407,11 @@
     },
     {
         "file": "denim_10.webp",
-        "category": "denim"
+        "category": "woven"
     },
     {
         "file": "denim_11.webp",
-        "category": "denim"
+        "category": "woven"
     },
     {
         "file": "denim_2.webp",
@@ -435,7 +435,7 @@
     },
     {
         "file": "denim_7.webp",
-        "category": "denim"
+        "category": "woven"
     },
     {
         "file": "denim_8.webp",
@@ -471,7 +471,7 @@
     },
     {
         "file": "serial_7.webp",
-        "category": "knit"
+        "category": "woven"
     },
     {
         "file": "serial_8.webp",
@@ -523,6 +523,10 @@
     },
     {
         "file": "fabrics_12.webp",
+        "category": "fabrics"
+    },
+    {
+        "file": "fabrics_13.webp",
         "category": "fabrics"
     }
 ];
