@@ -563,7 +563,7 @@ img[onmouseover]:hover {
   width: 100%;
   position: relative;
   display: flex;
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-lg) 0;
 }
 .marquee-track {
   display: flex;
@@ -890,7 +890,7 @@ footer.site-footer a.text-display:hover {
   width: 100%;
   position: relative;
   display: flex;
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-lg) 0;
 }
 
 .cert-pan-track {
