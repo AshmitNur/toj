@@ -321,15 +321,15 @@ nav.navbar.nav-scrolled {
   justify-content: center; /* Center-align inner content */
 }
 .logo-svg {
-  height: 220px; /* Expanded visual height to offset transparent padding */
+  height: 80px; /* Cropped logo height */
   width: auto;
   display: block;
-  margin: -40px 0; /* Retains layout height at exactly 140px (220 - 80) */
-  transition: height var(--transition-medium), margin var(--transition-medium);
+  margin: 0;
+  transition: height var(--transition-medium);
 }
 nav.navbar.nav-scrolled .logo-svg {
-  height: 170px; /* Expanded visual height on scroll */
-  margin: -30px 0; /* Retains layout height at exactly 110px (170 - 60) */
+  height: 60px; /* Cropped logo height on scroll */
+  margin: 0;
 }
 .logo-text {
   font-family: var(--font-display);
@@ -1010,6 +1010,9 @@ footer.site-footer a.text-display:hover {
   .navbar.nav-scrolled {
     height: 70px !important;
     padding: 0 var(--spacing-md) !important;
+  }
+  .navbar .logo-svg {
+    height: 50px !important;
   }
   .navbar.nav-scrolled .logo-svg {
     height: 44px !important;
