@@ -474,10 +474,6 @@
         "category": "woven"
     },
     {
-        "file": "serial_8.webp",
-        "category": "woven"
-    },
-    {
         "file": "fabrics_2.webp",
         "category": "fabrics"
     },
