@@ -450,10 +450,6 @@
         "category": "knit"
     },
     {
-        "file": "serial_2.webp",
-        "category": "denim"
-    },
-    {
         "file": "serial_3.webp",
         "category": "denim"
     },
