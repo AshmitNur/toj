@@ -407,7 +407,7 @@
     },
     {
         "file": "denim_10.webp",
-        "category": "woven"
+        "category": "denim"
     },
     {
         "file": "denim_11.webp",
@@ -419,7 +419,7 @@
     },
     {
         "file": "denim_3.webp",
-        "category": "denim"
+        "category": "woven"
     },
     {
         "file": "denim_4.webp",
@@ -478,10 +478,6 @@
         "category": "woven"
     },
     {
-        "file": "fabrics_1.webp",
-        "category": "fabrics"
-    },
-    {
         "file": "fabrics_2.webp",
         "category": "fabrics"
     },
@@ -525,10 +521,11 @@
         "file": "fabrics_12.webp",
         "category": "fabrics"
     },
-    {
-        "file": "fabrics_13.webp",
+ {
+        "file": "fabrics_1.webp",
         "category": "fabrics"
-    }
+    },
+
 ];
 
   const METADATA_TEMPLATES = {

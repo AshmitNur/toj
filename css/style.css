@@ -365,8 +365,8 @@ nav.navbar.nav-scrolled .logo-svg {
 }
 
 .btn-secondary {
-  background-color: transparent;
-  border: 1px solid var(--color-lime);
+  background-color: #293d56;
+  border: 1px solid transparent; 
   color: var(--color-lime);
 }
 .btn-secondary:hover {
