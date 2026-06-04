@@ -91,7 +91,7 @@
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.37 AM (1).webp",
-        "category": "woven"
+        "category": "knit"
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.37 AM (2).webp",
@@ -255,7 +255,7 @@
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.52 AM (2).webp",
-        "category": "woven"
+        "category": "knit"
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.52 AM.webp",
@@ -299,7 +299,7 @@
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.56 AM (2).webp",
-        "category": "woven"
+        "category": "knit"
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.56 AM.webp",
@@ -311,7 +311,7 @@
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.57 AM (2).webp",
-        "category": "woven"
+        "category": "knit"
     },
     {
         "file": "WhatsApp Image 2026-05-27 at 1.16.57 AM (3).webp",
