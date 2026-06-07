@@ -49,7 +49,7 @@ function initShowcaseGallery() {
       loadMoreContainer: document.getElementById('fabrics-load-more-container'),
       items: fabricsItems,
       currentPage: 1,
-      itemsPerPage: 10
+      itemsPerPage: 12
     }
   ];
 
