@@ -545,6 +545,10 @@
         "file": "fabrics_1.webp",
         "category": "fabrics"
     },
+     {
+        "file": "fabrics_1.webp",
+        "category": "fabrics"
+    },
 
 ];
 
