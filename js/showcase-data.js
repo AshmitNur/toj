@@ -9,6 +9,38 @@
         "file": "P1.webp",
         "category": "knit"
     },
+    {
+        "file": "P2.webp",
+        "category": "knit"
+    },
+    {
+        "file": "P3.webp",
+        "category": "knit"
+    },
+    {
+        "file": "P4.webp",
+        "category": "knit"
+    },
+    {
+        "file": "P5.webp",
+        "category": "knit"
+    },
+    {
+        "file": "P6.webp",
+        "category": "knit"
+    },
+    {
+        "file": "P7.webp",
+        "category": "knit"
+    },
+    {
+        "file": "P8.webp",
+        "category": "knit"
+    },
+    {
+        "file": "P9.webp",
+        "category": "knit"
+    },
         {
         "file": "WhatsApp Image 2026-05-27 at 1.16.29 AM (1).webp",
         "category": "knit"
