@@ -546,8 +546,40 @@
         "category": "fabrics"
     },
      {
-        "file": "fabrics_1.webp",
-        "category": "fabrics"
+        "file": "P10.webp",
+        "category": "knit"
+    },
+      {
+        "file": "P11.webp",
+        "category": "knit"
+    },
+     {
+        "file": "P12.webp",
+        "category": "knit"
+    },
+      {
+        "file": "P13.webp",
+        "category": "knit"
+    },
+      {
+        "file": "P14.webp",
+        "category": "knit"
+    },
+     {
+        "file": "P15.webp",
+        "category": "knit"
+    },
+     {
+        "file": "P16.webp",
+        "category": "knit"
+    },
+     {
+        "file": "P17.webp",
+        "category": "knit"
+    },
+     {
+        "file": "P18.webp",
+        "category": "knit"
     },
 
 ];
