@@ -25,7 +25,7 @@ function initShowcaseGallery() {
       loadMoreContainer: document.getElementById('knit-load-more-container'),
       items: knitItems,
       currentPage: 1,
-      itemsPerPage: 10
+      itemsPerPage: 11
     },
     {
       category: 'woven',
