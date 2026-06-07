@@ -212,8 +212,15 @@ function initShowcaseGallery() {
     lightbox.style.display = 'none';
 
     lightbox.innerHTML = `
-     <button class="lightbox-close" aria-label="Close Lightbox" style="position: absolute; top: 40px; right: 40px; background: none; border: 0; color: var(--color-lime); font-size: 3rem; cursor: pointer; transition: color 0.3s; z-index: 1010;">&times;</button> <button class="lightbox-nav lightbox-prev" aria-label="Previous Image" style="position: absolute; left: 40px; top: 50%; transform: translateY(-50%); background: none; border: 0; color: var(--color-lime); font-size: 2.5rem; cursor: pointer; transition: color 0.3s; z-index: 1010;">&larr;</button> <button class="lightbox-nav lightbox-next" aria-label="Next Image" style="position: absolute; right: 40px; top: 50%; transform: translateY(-50%); background: none; border: 0; color: var(--color-lime); font-size: 2.5rem; cursor: pointer; transition: color 0.3s; z-index: 1010;">&rarr;</button> <div class="lightbox-container" style="display: flex; flex-direction: row; width: 90%; max-width: 900px; height: 80vh; background-color: rgba(7, 13, 20, 0.95); border: 1px solid var(--color-slate); z-index: 1005; overflow: hidden; position: relative;"> <div class="lightbox-image-wrapper" style="flex: 1; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; padding: var(--spacing-lg); background-color: var(--color-void);"> <img src="" alt="" class="lightbox-img" style="max-width: 100%; max-height: 100%; object-fit: contain; transition: opacity 0.3s ease;"> </div>
-      </div>
+     <button class="lightbox-close" aria-label="Close Lightbox" style="position: absolute; top: 40px; right: 40px; background: none; border: 0; color: #00ff88; font-size: 3rem; cursor: pointer; transition: color 0.3s; z-index: 1010;">&times;</button> 
+<button class="lightbox-nav lightbox-prev" aria-label="Previous Image" style="position: absolute; left: 40px; top: 50%; transform: translateY(-50%); background: none; border: 0; color: #00ff88; font-size: 2.5rem; cursor: pointer; transition: color 0.3s; z-index: 1010;">&larr;</button> 
+<button class="lightbox-nav lightbox-next" aria-label="Next Image" style="position: absolute; right: 40px; top: 50%; transform: translateY(-50%); background: none; border: 0; color: #00ff88; font-size: 2.5rem; cursor: pointer; transition: color 0.3s; z-index: 1010;">&rarr;</button> 
+
+<div class="lightbox-container" style="display: flex; flex-direction: row; width: 90%; max-width: 900px; height: 80vh; background-color: rgba(7, 13, 20, 0.95); border: 1px solid var(--color-slate); z-index: 1005; overflow: hidden; position: relative;"> 
+  <div class="lightbox-image-wrapper" style="flex: 1; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; padding: var(--spacing-lg); background-color: var(--color-void);"> 
+    <img src="" alt="" class="lightbox-img" style="max-width: 100%; max-height: 100%; object-fit: contain; transition: opacity 0.3s ease;"> 
+  </div>
+</div>
     `;
 
     document.body.appendChild(lightbox);
