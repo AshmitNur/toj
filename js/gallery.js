@@ -25,7 +25,7 @@ function initShowcaseGallery() {
       loadMoreContainer: document.getElementById('knit-load-more-container'),
       items: knitItems,
       currentPage: 1,
-      itemsPerPage: 6
+      itemsPerPage: 10
     },
     {
       category: 'woven',
@@ -33,7 +33,7 @@ function initShowcaseGallery() {
       loadMoreContainer: document.getElementById('woven-load-more-container'),
       items: wovenItems,
       currentPage: 1,
-      itemsPerPage: 6
+      itemsPerPage: 10
     },
     {
       category: 'denim',
@@ -49,7 +49,7 @@ function initShowcaseGallery() {
       loadMoreContainer: document.getElementById('fabrics-load-more-container'),
       items: fabricsItems,
       currentPage: 1,
-      itemsPerPage: 6
+      itemsPerPage: 10
     }
   ];
 
