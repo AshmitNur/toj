@@ -6,7 +6,7 @@
 (function() {
   const SHOWCASE_ITEMS = [
     {
-        "file": "P1.webp",
+        "file": "P7.webp",
         "category": "knit"
     },
     {
@@ -30,7 +30,7 @@
         "category": "knit"
     },
     {
-        "file": "P7.webp",
+        "file": "P1.webp",
         "category": "knit"
     },
     {
