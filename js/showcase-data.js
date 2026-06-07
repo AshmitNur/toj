@@ -5,6 +5,10 @@
 
 (function() {
   const SHOWCASE_ITEMS = [
+    {
+        "file": "P1.webp",
+        "category": "knit"
+    },
         {
         "file": "WhatsApp Image 2026-05-27 at 1.16.29 AM (1).webp",
         "category": "knit"
