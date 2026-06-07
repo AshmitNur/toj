@@ -278,10 +278,6 @@
         "category": "knit"
     },
     {
-        "file": "WhatsApp Image 2026-05-27 at 1.16.51 AM (2).webp",
-        "category": "knit"
-    },
-    {
         "file": "WhatsApp Image 2026-05-27 at 1.16.51 AM.webp",
         "category": "knit"
     },
@@ -496,10 +492,6 @@
     {
         "file": "serial_5.webp",
         "category": "woven"
-    },
-    {
-        "file": "serial_6.webp",
-        "category": "knit"
     },
     {
         "file": "serial_7.webp",
