@@ -886,6 +886,37 @@ footer.site-footer a.text-display:hover {
   color: var(--color-lime);
 }
 
+.footer-socials {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.footer-socials .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: #889bb0;
+  border: 1px solid var(--color-slate-light);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.footer-socials .social-link:hover {
+  color: var(--color-lime);
+  border-color: var(--color-lime);
+  background-color: rgba(187, 215, 42, 0.05);
+  transform: translateY(-2px);
+}
+
+.footer-socials .social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
 /* --- Certification Infinite Panning Track --- */
 .cert-pan-container {
   overflow: hidden;
